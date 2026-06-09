@@ -1,1 +1,1426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aldea — El Arte de Saber Estar. Un espacio donde cada mujer encuentra su lugar y transforma su presencia en el mundo." />
+  <meta property="og:title" content="ALDEA — El Arte de Saber Estar" />
+  <meta property="og:description" content="Un espacio donde cada mujer encuentra su lugar y transforma su presencia en el mundo." />
+  <meta property="og:type" content="website" />
+  <title>ALDEA — El Arte de Saber Estar</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="theme-color" content="#FAF7F2" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap&font-display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       CSS CUSTOM PROPERTIES
+    ============================================= */
+    :root {
+      --cream: #F5F0E8;
+      --cream-light: #FAF7F2;
+      --warm-white: #FEFCF8;
+      --brown-dark: #2C1810;
+      --brown-medium: #8B4513;
+      --terracotta: #A0522D;
+      --terracotta-btn: #8B3A2A;
+      --terracotta-hover: #7A3020;
+      --card-dark: #1E1410;
+      --card-dark-2: #241810;
+      --text-dark: #2C2016;
+      --text-medium: #5C4A3A;
+      --text-light: #8A7060;
+      --border-light: rgba(139, 69, 19, 0.15);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Montserrat', sans-serif;
+      --nav-height: 64px;
+      --section-pad: clamp(60px, 8vw, 120px);
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--cream-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* =============================================
+       TYPOGRAPHY
+    ============================================= */
+    .label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.15;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      font-weight: 300;
+      color: var(--text-medium);
+      line-height: 1.7;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--terracotta);
+      margin: 16px auto 0;
+      opacity: 0.6;
+    }
+
+    /* =============================================
+       BUTTONS
+    ============================================= */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+      border: 1.5px solid transparent;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--terracotta-btn);
+      color: #fff;
+      border-color: var(--terracotta-btn);
+    }
+
+    .btn-primary:hover {
+      background: var(--terracotta-hover);
+      border-color: var(--terracotta-hover);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-dark);
+      border-color: rgba(44, 24, 16, 0.35);
+    }
+
+    .btn-outline:hover {
+      background: rgba(44, 24, 16, 0.06);
+      border-color: rgba(44, 24, 16, 0.5);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    /* =============================================
+       NAVBAR
+    ============================================= */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(24px, 5vw, 72px);
+
+      /* Estado inicial: completamente transparente */
+      background: rgba(250, 247, 242, 0);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      border-bottom: 1px solid rgba(180, 160, 140, 0);
+      box-shadow: 0 1px 0 rgba(180, 160, 140, 0);
+
+      /* Transición suave en todas las propiedades */
+      transition:
+        background 0.45s ease,
+        backdrop-filter 0.45s ease,
+        -webkit-backdrop-filter 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+    }
+
+    /* Estado al hacer scroll: blanco con borde gris */
+    .navbar.scrolled {
+      background: rgba(250, 247, 242, 0.97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(180, 160, 140, 0.22);
+      box-shadow: 0 1px 16px rgba(100, 70, 40, 0.07);
+    }
+
+    /* Logo — blanco en hero, oscuro al scrollear */
+    .navbar__logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: #fff;
+      transition: color 0.45s ease;
+    }
+
+    .navbar.scrolled .navbar__logo {
+      color: var(--text-dark);
+    }
+
+    .navbar__nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 48px);
+    }
+
+    /* Links de nav — blancos en hero, oscuros al scrollear */
+    .navbar__nav a:not(.btn) {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.9);
+      transition: color 0.45s ease, opacity 0.2s ease;
+    }
+
+    .navbar__nav a:not(.btn):hover {
+      color: #fff;
+      opacity: 0.75;
+    }
+
+    .navbar.scrolled .navbar__nav a:not(.btn) {
+      color: var(--text-dark);
+    }
+
+    .navbar.scrolled .navbar__nav a:not(.btn):hover {
+      color: var(--terracotta);
+      opacity: 1;
+    }
+
+    /* Hamburger mobile — blanco en hero, oscuro al scrollear */
+    .navbar__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .navbar__hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: #fff;
+      transition: transform 0.3s ease, opacity 0.3s ease, background 0.45s ease;
+    }
+
+    .navbar.scrolled .navbar__hamburger span {
+      background: var(--text-dark);
+    }
+
+    .navbar__hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .navbar__hamburger.open span:nth-child(2) { opacity: 0; }
+    .navbar__hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .navbar__mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: rgba(250, 247, 242, 0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 24px clamp(24px, 6vw, 48px) 32px;
+      border-bottom: 1px solid var(--border-light);
+      flex-direction: column;
+      gap: 20px;
+      z-index: 99;
+    }
+
+    .navbar__mobile-menu.open {
+      display: flex;
+    }
+
+    .navbar__mobile-menu a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero__slideshow {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero__slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+
+    .hero__slide.active {
+      opacity: 1;
+    }
+
+    /* Placeholder gradients as fallback (replace with real images) */
+    .hero__slide:nth-child(1) {
+      background-image: linear-gradient(135deg, #c8a882 0%, #a07850 30%, #7a5530 60%, #4a2e18 100%);
+    }
+    .hero__slide:nth-child(2) {
+      background-image: linear-gradient(135deg, #b89060 0%, #8a6040 40%, #5a3820 70%, #3a2010 100%);
+    }
+    .hero__slide:nth-child(3) {
+      background-image: linear-gradient(135deg, #d0b090 0%, #b08060 35%, #805030 65%, #4a2818 100%);
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.08) 0%,
+        rgba(0,0,0,0.18) 40%,
+        rgba(250,247,242,0.45) 85%,
+        rgba(250,247,242,1) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .hero__eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 16px;
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(5rem, 15vw, 12rem);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: #fff;
+      line-height: 0.9;
+      text-shadow: 0 2px 40px rgba(0,0,0,0.25);
+      margin-bottom: 20px;
+    }
+
+    .hero__tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.88);
+      letter-spacing: 0.05em;
+      margin-bottom: 36px;
+    }
+
+    .hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: color 0.2s;
+    }
+
+    .hero__cta:hover {
+      color: #fff;
+    }
+
+    .hero__cta svg {
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
+
+    /* =============================================
+       SECTION: QUE ES ALDEA
+    ============================================= */
+    .section-aldea {
+      background: var(--cream-light);
+      padding: var(--section-pad) clamp(24px, 8vw, 120px);
+    }
+
+    .section-aldea__header {
+      text-align: center;
+      margin-bottom: clamp(48px, 6vw, 80px);
+    }
+
+    .section-aldea__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-aldea__text p {
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      color: var(--text-medium);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .section-aldea__text p strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .section-aldea__text p em {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--terracotta);
+      font-size: 1.05em;
+    }
+
+    .section-aldea__card {
+      background: linear-gradient(145deg, #E8DDD0 0%, #D4C4B0 50%, #C8B49A 100%);
+      border-radius: 16px;
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 32px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(100, 60, 20, 0.12);
+    }
+
+    .section-aldea__card-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--brown-dark);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .section-aldea__card-sub {
+      font-family: var(--font-display);
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-style: italic;
+      color: var(--terracotta);
+      letter-spacing: 0.02em;
+    }
+
+    /* =============================================
+       SECTION: PROGRAMAS (PRICING)
+    ============================================= */
+    .section-programas {
+      background: var(--cream-light);
+      padding: var(--section-pad) clamp(24px, 5vw, 80px);
+    }
+
+    .section-programas__header {
+      text-align: center;
+      margin-bottom: clamp(48px, 6vw, 72px);
+    }
+
+    .section-programas__header .section-subtitle {
+      margin-top: 16px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(16px, 2.5vw, 28px);
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: clamp(28px, 3vw, 40px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+    }
+
+    .pricing-card--featured {
+      background: var(--card-dark);
+      border-color: transparent;
+      box-shadow: 0 24px 60px rgba(30, 10, 5, 0.25);
+      transform: translateY(-8px);
+      color: #fff;
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--terracotta-btn);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .pricing-card__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(139, 53, 42, 0.1);
+    }
+
+    .pricing-card--featured .pricing-card__icon {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .pricing-card__icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--terracotta-btn);
+    }
+
+    .pricing-card--featured .pricing-card__icon svg {
+      stroke: #E8C4A0;
+    }
+
+    .pricing-card__name {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 400;
+      color: var(--text-dark);
+    }
+
+    .pricing-card--featured .pricing-card__name {
+      color: #fff;
+    }
+
+    .pricing-card__tier {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-top: -12px;
+    }
+
+    .pricing-card--featured .pricing-card__tier {
+      color: #E8A880;
+    }
+
+    .pricing-card__desc {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--text-medium);
+      flex-grow: 1;
+    }
+
+    .pricing-card--featured .pricing-card__desc {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .pricing-card__features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pricing-card__features li {
+      font-size: 0.84rem;
+      color: var(--text-medium);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .pricing-card--featured .pricing-card__features li {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .pricing-card__features li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .pricing-card--featured .pricing-card__features li::before {
+      background: #E8A880;
+    }
+
+    /* =============================================
+       SECTION: LA PLAZA (CONVERSACIONES)
+    ============================================= */
+    .section-plaza {
+      background: var(--cream-light);
+      padding: var(--section-pad) clamp(24px, 8vw, 120px);
+    }
+
+    .section-plaza__header {
+      text-align: center;
+      margin-bottom: clamp(40px, 5vw, 64px);
+    }
+
+    .section-plaza__header .section-subtitle {
+      margin-top: 12px;
+    }
+
+    .conversation-list {
+      max-width: 840px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .conversation-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .conversation-item__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .conversation-item__header:hover {
+      background: rgba(139, 69, 19, 0.03);
+    }
+
+    .conversation-item__left h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.35;
+    }
+
+    .conversation-item__left span {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 3px;
+      display: block;
+    }
+
+    .conversation-item__right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    .conversation-item__stat {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    .conversation-item__stat svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--text-light);
+      fill: none;
+    }
+
+    .conversation-item__chevron {
+      width: 16px;
+      height: 16px;
+      stroke: var(--text-light);
+      fill: none;
+      transition: transform 0.25s ease;
+    }
+
+    .conversation-item.open .conversation-item__chevron {
+      transform: rotate(180deg);
+    }
+
+    .conversation-item__body {
+      display: none;
+      padding: 0 24px 20px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .conversation-item.open .conversation-item__body {
+      display: block;
+    }
+
+    .conversation-item__body p {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      line-height: 1.7;
+      margin-top: 16px;
+      margin-bottom: 14px;
+    }
+
+    .conversation-item__link {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .conversation-item__link:hover {
+      gap: 10px;
+    }
+
+    .section-plaza__footer {
+      text-align: center;
+      margin-top: clamp(40px, 5vw, 56px);
+    }
+
+    .section-plaza__footer p {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      margin-bottom: 20px;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      background: var(--card-dark);
+      color: rgba(255,255,255,0.7);
+      padding: clamp(48px, 7vw, 80px) clamp(24px, 8vw, 120px) 0;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: clamp(32px, 5vw, 80px);
+      padding-bottom: clamp(40px, 5vw, 64px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer__logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .footer__desc {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.55);
+      max-width: 280px;
+    }
+
+    .footer__col-title {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer__links a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+
+    .footer__links a:hover {
+      color: #fff;
+    }
+
+    .footer__bottom {
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* =============================================
+       SCROLL REVEAL ANIMATION
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* =============================================
+       RESPONSIVE — TABLET (max 900px)
+    ============================================= */
+    @media (max-width: 900px) {
+      .section-aldea__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-aldea__card {
+        aspect-ratio: 16/7;
+        max-width: 480px;
+        margin: 0 auto;
+        order: 2;
+      }
+
+      .section-aldea__text {
+        order: 1;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+      }
+
+      .pricing-card--featured {
+        transform: none;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer__grid > :first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    /* =============================================
+       RESPONSIVE — MOBILE (max 640px)
+    ============================================= */
+    @media (max-width: 640px) {
+      :root {
+        --nav-height: 56px;
+      }
+
+      .navbar__nav {
+        display: none;
+      }
+
+      .navbar__hamburger {
+        display: flex;
+      }
+
+      .hero__title {
+        font-size: clamp(4rem, 20vw, 6rem);
+      }
+
+      .section-aldea,
+      .section-programas,
+      .section-plaza {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer__desc {
+        max-width: none;
+      }
+
+      .conversation-item__header {
+        padding: 16px 18px;
+        min-height: 44px; /* touch target */
+      }
+
+      .conversation-item__body {
+        padding: 0 18px 16px;
+      }
+
+      .conversation-item__right {
+        gap: 10px;
+      }
+
+      /* Touch-friendly buttons */
+      .btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pricing-card {
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="navbar" id="navbar" role="banner">
+    <a href="#" class="navbar__logo" aria-label="ALDEA inicio">ALDEA</a>
+    <nav class="navbar__nav" aria-label="Navegación principal">
+      <a href="#aldea">Aldea</a>
+      <a href="#programas">Programas</a>
+      <a href="#la-plaza">La Plaza</a>
+      <a href="#programas" class="btn btn-primary">Entrar</a>
+    </nav>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile menu -->
+  <nav class="navbar__mobile-menu" id="mobile-menu" aria-label="Menú móvil">
+    <a href="#aldea">Aldea</a>
+    <a href="#programas">Programas</a>
+    <a href="#la-plaza">La Plaza</a>
+    <a href="#programas" class="btn btn-primary" style="text-align:center;margin-top:4px;">Entrar</a>
+  </nav>
+
+  <main>
+    <!-- ============================================================
+         HERO — Slideshow
+    ============================================================ -->
+    <section class="hero" id="hero" aria-label="Bienvenida a Aldea">
+      <div class="hero__slideshow" aria-hidden="true">
+        <div class="hero__slide active"></div>
+        <div class="hero__slide"></div>
+        <div class="hero__slide"></div>
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Bienvenida a</p>
+        <h1 class="hero__title">ALDEA</h1>
+        <p class="hero__tagline">El Arte de Saber Estar</p>
+        <button class="hero__cta" onclick="document.getElementById('aldea').scrollIntoView({behavior:'smooth'})">
+          Descubre más
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ¿QUÉ ES ALDEA?
+    ============================================================ -->
+    <section class="section-aldea" id="aldea" aria-labelledby="aldea-title">
+      <div class="section-aldea__header reveal">
+        <p class="label">Tu nuevo hogar</p>
+        <h2 class="section-title" id="aldea-title">¿Qué es Aldea?</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="section-aldea__grid">
+        <div class="section-aldea__text reveal reveal-delay-1">
+          <p>
+            Aldea es más que un programa de formación. Es un
+            <strong>espacio donde habitar</strong>, una comunidad donde cada mujer
+            encuentra su lugar y transforma la manera en que se presenta al mundo.
+          </p>
+          <p>
+            Basado en el método <em>El Arte de Saber Estar</em>, Aldea te guía
+            en un viaje de descubrimiento personal, construcción de marca y
+            dominio del protocolo contemporáneo.
+          </p>
+          <p>
+            Aquí no vienes de visita. Aquí <strong>te quedas</strong>.
+          </p>
+        </div>
+        <div class="section-aldea__card reveal reveal-delay-2" aria-hidden="true">
+          <p class="section-aldea__card-title">Saber estar</p>
+          <p class="section-aldea__card-sub">es saber ser</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROGRAMAS — Pricing
+    ============================================================ -->
+    <section class="section-programas" id="programas" aria-labelledby="programas-title">
+      <div class="section-programas__header reveal">
+        <p class="label">Tu camino en Aldea</p>
+        <h2 class="section-title" id="programas-title">Elige tu lugar</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle" style="margin-top:20px;">Tres caminos, un mismo destino: la mejor versión de ti misma.</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Ciudadana -->
+        <div class="pricing-card reveal reveal-delay-1">
+          <div class="pricing-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pricing-card__name">Ciudadana</h3>
+            <p class="pricing-card__tier">Membresía Mensual</p>
+          </div>
+          <p class="pricing-card__desc">
+            Para quienes quieren aprender de El Arte de Saber Estar. Accede a
+            contenido exclusivo, masterclasses mensuales y una comunidad que te
+            impulsa a ser tu mejor versión.
+          </p>
+          <ul class="pricing-card__features" aria-label="Beneficios Ciudadana">
+            <li>Acceso a contenido mensual exclusivo</li>
+            <li>Masterclasses en vivo</li>
+            <li>Comunidad privada</li>
+            <li>Recursos descargables</li>
+          </ul>
+          <a href="#" class="btn btn-outline" role="button">Quiero Entrar</a>
+        </div>
+
+        <!-- Regidora — Featured -->
+        <div class="pricing-card pricing-card--featured reveal reveal-delay-2" aria-label="Más popular">
+          <div class="pricing-badge">Más popular</div>
+          <div class="pricing-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 4l3 12h14l3-12-6 5-4-7-4 7-6-5z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pricing-card__name">Regidora</h3>
+            <p class="pricing-card__tier">Programa de 2 meses</p>
+          </div>
+          <p class="pricing-card__desc">
+            Crea tu marca personal y transforma tu proyección en el mundo. Un programa
+            intensivo donde construirás los pilares de tu presencia profesional y personal.
+          </p>
+          <ul class="pricing-card__features" aria-label="Beneficios Regidora">
+            <li>Todo lo de Ciudadana</li>
+            <li>Mentoría personalizada</li>
+            <li>Creación de marca personal</li>
+            <li>Plan de proyección profesional</li>
+          </ul>
+          <a href="#" class="btn btn-primary" role="button">Quiero Entrar</a>
+        </div>
+
+        <!-- Gobernadora -->
+        <div class="pricing-card reveal reveal-delay-3">
+          <div class="pricing-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pricing-card__name">Gobernadora</h3>
+            <p class="pricing-card__tier">Certificación</p>
+          </div>
+          <p class="pricing-card__desc">
+            Conviértete en embajadora del método El Arte de Saber Estar. Una
+            certificación completa para quienes desean llevar este conocimiento al mundo.
+          </p>
+          <ul class="pricing-card__features" aria-label="Beneficios Gobernadora">
+            <li>Todo lo de Regidora</li>
+            <li>Certificación oficial</li>
+            <li>Formación como facilitadora</li>
+            <li>Kit de embajadora</li>
+          </ul>
+          <a href="#" class="btn btn-outline" role="button">Quiero Entrar</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LA PLAZA — Conversaciones
+    ============================================================ -->
+    <section class="section-plaza" id="la-plaza" aria-labelledby="plaza-title">
+      <div class="section-plaza__header reveal">
+        <p class="label">La Plaza</p>
+        <h2 class="section-title" id="plaza-title">Conversaciones de Aldea</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle" style="margin-top:16px;">Un espacio donde las preguntas se convierten en sabiduría compartida.</p>
+      </div>
+
+      <div class="conversation-list" role="list">
+
+        <article class="conversation-item reveal reveal-delay-1" role="listitem">
+          <div class="conversation-item__header" onclick="toggleConversation(this)" role="button" aria-expanded="false" tabindex="0">
+            <div class="conversation-item__left">
+              <h3>¿Cómo manejar la primera impresión en una reunión de negocios?</h3>
+              <span>por María G.</span>
+            </div>
+            <div class="conversation-item__right">
+              <span class="conversation-item__stat" aria-label="12 comentarios">
+                <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                12
+              </span>
+              <span class="conversation-item__stat" aria-label="34 me gusta">
+                <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                34
+              </span>
+              <svg class="conversation-item__chevron" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="conversation-item__body">
+            <p>La clave está en los primeros 7 segundos. Tu postura, tu mirada y tu saludo comunican más que cualquier tarjeta de presentación...</p>
+            <a href="#" class="conversation-item__link">Unirme a la conversación →</a>
+          </div>
+        </article>
+
+        <article class="conversation-item reveal reveal-delay-2" role="listitem">
+          <div class="conversation-item__header" onclick="toggleConversation(this)" role="button" aria-expanded="false" tabindex="0">
+            <div class="conversation-item__left">
+              <h3>Tips para vestir con intención sin perder autenticidad</h3>
+              <span>por Carolina R.</span>
+            </div>
+            <div class="conversation-item__right">
+              <span class="conversation-item__stat" aria-label="8 comentarios">
+                <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                8
+              </span>
+              <span class="conversation-item__stat" aria-label="27 me gusta">
+                <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                27
+              </span>
+              <svg class="conversation-item__chevron" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="conversation-item__body">
+            <p>Vestir con intención es un acto de respeto hacia ti misma y hacia quien te recibe. No se trata de seguir tendencias, sino de comunicar quién eres antes de hablar...</p>
+            <a href="#" class="conversation-item__link">Unirme a la conversación →</a>
+          </div>
+        </article>
+
+        <article class="conversation-item reveal reveal-delay-3" role="listitem">
+          <div class="conversation-item__header" onclick="toggleConversation(this)" role="button" aria-expanded="false" tabindex="0">
+            <div class="conversation-item__left">
+              <h3>¿Cómo construir una marca personal que trascienda?</h3>
+              <span>por Valentina S.</span>
+            </div>
+            <div class="conversation-item__right">
+              <span class="conversation-item__stat" aria-label="15 comentarios">
+                <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                15
+              </span>
+              <span class="conversation-item__stat" aria-label="41 me gusta">
+                <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                41
+              </span>
+              <svg class="conversation-item__chevron" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="conversation-item__body">
+            <p>Tu marca personal no es lo que dices de ti misma, es lo que los demás perciben. Empieza por definir tus valores no negociables...</p>
+            <a href="#" class="conversation-item__link">Unirme a la conversación →</a>
+          </div>
+        </article>
+
+        <article class="conversation-item reveal reveal-delay-4" role="listitem">
+          <div class="conversation-item__header" onclick="toggleConversation(this)" role="button" aria-expanded="false" tabindex="0">
+            <div class="conversation-item__left">
+              <h3>El protocolo en la era digital: ¿sigue siendo relevante?</h3>
+              <span>por Isabella M.</span>
+            </div>
+            <div class="conversation-item__right">
+              <span class="conversation-item__stat" aria-label="20 comentarios">
+                <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                20
+              </span>
+              <span class="conversation-item__stat" aria-label="53 me gusta">
+                <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                53
+              </span>
+              <svg class="conversation-item__chevron" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="conversation-item__body">
+            <p>Más que nunca. En un mundo donde todo es rápido y casual, saber estar con elegancia digital te diferencia inmediatamente...</p>
+            <a href="#" class="conversation-item__link">Unirme a la conversación →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="section-plaza__footer reveal">
+        <p>¿Tienes una pregunta? Este es tu espacio.</p>
+        <a href="#" class="btn btn-primary">Hacer una pregunta</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__logo">ALDEA</p>
+        <p class="footer__desc">El Arte de Saber Estar. Un espacio donde cada mujer encuentra su lugar y transforma su presencia en el mundo.</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Navegar</p>
+        <ul class="footer__links">
+          <li><a href="#aldea">¿Qué es Aldea?</a></li>
+          <li><a href="#programas">Programas</a></li>
+          <li><a href="#la-plaza">La Plaza</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Contacto</p>
+        <ul class="footer__links">
+          <li><a href="mailto:hola@aldea.com">hola@aldea.com</a></li>
+          <li><a href="https://instagram.com/aldea.oficial" target="_blank" rel="noopener">@aldea.oficial</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 ALDEA. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // ── Navbar: transparente en hero, blanco al scrollear ─────────
+    const navbar = document.getElementById('navbar');
+    const hero   = document.getElementById('hero');
+
+    function updateNavbar() {
+      // El navbar cambia cuando el usuario sale del hero (menos el alto del nav)
+      const threshold = hero
+        ? hero.offsetHeight - navbar.offsetHeight
+        : window.innerHeight * 0.6;
+
+      if (window.scrollY > threshold) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+
+    // Ejecutar al cargar y en cada scroll
+    updateNavbar();
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+    window.addEventListener('resize', updateNavbar, { passive: true });
+
+    // ── Hamburger menu ────────────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Hero slideshow ────────────────────────────────────────────
+    const slides = document.querySelectorAll('.hero__slide');
+    let currentSlide = 0;
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+
+    // ── Conversation accordion ────────────────────────────────────
+    function toggleConversation(header) {
+      const item = header.closest('.conversation-item');
+      const isOpen = item.classList.toggle('open');
+      header.setAttribute('aria-expanded', isOpen);
+    }
+
+    // Keyboard accessibility for accordion
+    document.querySelectorAll('.conversation-item__header').forEach(header => {
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleConversation(header);
+        }
+      });
+    });
+
+    // ── Scroll reveal ─────────────────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── Smooth scroll for anchor links ────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = parseInt(getComputedStyle(document.documentElement)
+            .getPropertyValue('--nav-height')) || 64;
+          window.scrollTo({
+            top: target.getBoundingClientRect().top + window.scrollY - offset,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
 
