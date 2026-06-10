@@ -1,1 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Regidora · Aceleradora de Autoridad y Presencia Estratégica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Regidora: La aceleradora de presencia ejecutiva e inteligencia política dentro de la revolución de ALDEA. Un entrenamiento de 6 semanas de inmersión uno a uno." />
 
+  <!-- OG básico -->
+  <meta property="og:title" content="Regidora · Aceleradora ALDEA" />
+  <meta property="og:description" content="Domina las reglas invisibles del juego del estatus corporativo. Mentoría 1-a-1 de 6 semanas con María Paula Camacho." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tipografías de ALDEA -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #FAF7F2;
+      --bg-alt: #F5F0E8;
+      --bg-dark: #1E1410; /* El chocolate/carbón oscuro premium de la home de ALDEA */
+      --bg-soft: #FBF9F5;
+      --text-main: #2C2016;
+      --text-muted: #6E5F52;
+      --text-light: #FEFCF8;
+      --accent: #8B3A2A; /* Terracota oficial */
+      --accent-bronze: #C59B6D; /* Bronce/Oro para acentos corporativos de alto nivel */
+      --accent-soft: rgba(139, 58, 42, 0.08);
+      --border-soft: #E1D5C8;
+      --border-dark: rgba(255, 255, 255, 0.08);
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 24px;
+
+      --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-main);
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 100% - 3rem);
+      margin: 0 auto;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(250, 247, 242, 0.94);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .navbar-brand span:nth-child(2) {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-bronze);
+      font-weight: 600;
+    }
+
+    .navbar-link {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .navbar-link:hover {
+      color: var(--accent);
+    }
+
+    /* Botones */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.8rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #FFF;
+      box-shadow: 0 14px 28px rgba(139, 58, 42, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 34px rgba(139, 58, 42, 0.32);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-light);
+      border-color: var(--accent-bronze);
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: var(--text-light);
+    }
+
+    /* Tipografía */
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin: 0 0 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      line-height: 1.25;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 0.98rem;
+      margin: 0 0 1rem;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-bronze);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 38rem;
+      margin-bottom: 1.7rem;
+    }
+
+    /* Secciones */
+    section {
+      padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+    }
+
+    .section-alt {
+      background-color: var(--bg-alt);
+    }
+
+    .section-dark {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    .section-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: clamp(4rem, 8vw, 6rem);
+      padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+      background: radial-gradient(circle at top left, rgba(139, 58, 42, 0.14), transparent 60%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: clamp(2.5rem, 5vw, 3.8rem);
+      align-items: center;
+    }
+
+    .hero-lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      max-width: 34rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 28rem;
+    }
+
+    /* Panel de imagen hero */
+    .hero-image-panel {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      height: 480px;
+      background-image: linear-gradient(to bottom, rgba(30, 20, 16, 0.2), rgba(30, 20, 16, 0.55)), url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"); /* Imagen premium de arquitectura corporativa de alta gama */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 1px solid var(--border-soft);
+    }
+
+    /* Listas y layouts */
+    .bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bullet-list li {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+    }
+
+    .bullet-dot {
+      margin-top: 0.5rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background-color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .bullet-dot-bronze {
+      background-color: var(--accent-bronze);
+    }
+
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: step;
+    }
+
+    .steps-list li {
+      counter-increment: step;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .steps-list li::before {
+      content: counter(step);
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1.5px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 0.1rem;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: clamp(2rem, 4vw, 3rem);
+      align-items: flex-start;
+    }
+
+    .highlight-box {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      padding: 1.5rem 1.45rem 1.3rem;
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .highlight-box-dark {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-dark);
+      padding: 1.5rem 1.45rem 1.3rem;
+      background: rgba(30, 20, 16, 0.6);
+      color: var(--text-light);
+    }
+
+    .highlight-box p {
+      font-size: 0.92rem;
+      margin-bottom: 0.6rem;
+    }
+
+    /* Grillas Especiales */
+    .profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.8rem;
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .profile-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.25rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .profile-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Ejes de Poder (Sección Oscura) */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .pillar-card {
+      border-left: 2.5px solid var(--accent-bronze);
+      padding-left: 1.2rem;
+    }
+
+    .pillar-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.4rem;
+      color: var(--accent-bronze);
+      margin-bottom: 0.4rem;
+    }
+
+    .pillar-card p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+    }
+
+    /* Precio y garantía */
+    .value-stack {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: clamp(1.8rem, 4vw, 2.8rem);
+      align-items: flex-start;
+    }
+
+    .price-tag {
+      font-size: 2.2rem;
+      font-family: "Cormorant Garamond", serif;
+      margin: 0.4rem 0 0.5rem;
+      font-weight: 500;
+    }
+
+    .price-tag span {
+      font-size: 1rem;
+      font-family: "Montserrat", sans-serif;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .value-note {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .guarantee {
+      border-radius: var(--radius-md);
+      border: 1px dashed rgba(139, 58, 42, 0.4);
+      background: rgba(139, 58, 42, 0.03);
+      padding: 1.45rem 1.4rem 1.2rem;
+      font-size: 0.92rem;
+    }
+
+    /* CTA final */
+    .cta-final {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .cta-final p {
+      font-size: 0.98rem;
+    }
+
+    .signature {
+      margin-top: 1.8rem;
+      font-size: 0.9rem;
+    }
+
+    .signature-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    .postdata {
+      margin-top: 1.6rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      text-align: left;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 1.2rem;
+    }
+
+    .postdata p {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.8rem 0 2rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background-color: var(--bg-soft);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .two-column,
+      .value-stack {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-grid {
+        gap: 2rem;
+      }
+
+      .hero-image-panel {
+        order: -1;
+        height: 280px;
+      }
+
+      .profiles-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.2rem;
+      }
+
+      .pillars-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.4rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .navbar-inner {
+        padding: 0.65rem 0;
+      }
+
+      .hero {
+        padding-top: 2.6rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar" role="banner">
+    <div class="container navbar-inner">
+      <a href="/index.html" class="navbar-brand" aria-label="Volver a la página principal de ALDEA">
+        <span>ALDEA</span>
+        <span>REGIDORA</span>
+      </a>
+      <a href="/index.html#programas" class="navbar-link">Ver otros caminos</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">La Revolución de La Etiquette · ALDEA</p>
+          <h1 id="hero-title">Tu talento ya te trajo hasta hoy. Es momento de que tu presencia te lleve al siguiente nivel.</h1>
+          <p class="hero-lead">
+            <strong>Regidora</strong> es la Aceleradora de Autoridad y Presencia Estratégica. Un entrenamiento inmersivo de 6 semanas de mentoría uno a uno diseñado para mujeres con un objetivo específico o en plena transición de liderazgo.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="https://estreno.campuslaetiquette.com/aplicar-regidora" class="btn btn-primary">
+              Aplicar a Regidora
+            </a>
+          </div>
+
+          <p class="hero-note">
+            Al hacer clic, responderás un breve cuestionario de perfil y podrás agendar tu **Sesión de Claridad gratuita** conmigo.
+          </p>
+        </div>
+
+        <!-- Panel de imagen premium a la derecha -->
+        <div class="hero-image-panel" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- BIENVENIDA -->
+    <section id="bienvenida" class="section-alt" aria-labelledby="bienvenida-title">
+      <div class="container section-inner">
+        <h2 id="bienvenida-title">Te doy la bienvenida a una nueva era etiquetuna</h2>
+        <div class="section-lead">
+          Durante mucho tiempo nos enseñaron que la etiqueta era sinónimo de rigidez, de normas del pasado o de «no meter la pata». Pero en ALDEA estamos haciendo una revolución.
+        </div>
+        
+        <p>
+          Para nosotras, el buen saber estar no es un examen sorpresa: es una herramienta de poder, asertividad y conexión corporativa. Es la capacidad de cambiar la temperatura de una habitación sin necesidad de levantar la voz.
+        </p>
+        <p>
+          Si el éxito fuera solo una suma de horas acumuladas y diplomas en la pared, ya estarías en la cima. Pero llega un punto en tu carrera donde la competencia técnica es un *commodity*, un requisito mínimo que ya se da por sentado. Lo que marca la diferencia entre ser "útil" y ser "influyente" es tu estrategia social.
+        </p>
+        <p>
+          Por eso he creado <strong>Regidora</strong>. No es un curso de modales; es el acelerador definitivo para tu proyección y tu reputación de liderazgo.
+        </p>
+      </div>
+    </section>
+
+    <!-- EL PERFIL / TRANSICIÓN -->
+    <section id="perfil" aria-labelledby="perfil-title">
+      <div class="container section-inner">
+        <h2 id="perfil-title" style="text-align: center;">Diseñado para mujeres en transición o con un objetivo específico</h2>
+        <p class="section-lead" style="text-align: center; margin-left: auto; margin-right: auto;">
+          Este programa no es para pasear ni para buscar validación emocional. Es un espacio de alto rendimiento para la mujer decidida que hoy se encuentra ante un reto particular o una transición crítica de liderazgo:
+        </p>
+        
+        <div class="profiles-grid">
+          <div class="profile-card">
+            <h3>Ascenso Directivo</h3>
+            <p>Necesitas que tu presencia finalmente esté a la altura de tu intelecto y tu nuevo rol de liderazgo, dejando atrás la mentalidad de quien ejecuta.</p>
+          </div>
+          <div class="profile-card">
+            <h3>Transición o Rebranding</h3>
+            <p>Atraviesas un nuevo modelo de negocio o búsqueda de inversión donde tu marca personal debe proyectar la seguridad indiscutible de una líder.</p>
+          </div>
+          <div class="profile-card">
+            <h3>Reto de Reputación</h3>
+            <p>Sientes que en las mesas de decisión te interrumpen, o que necesitas mayor asertividad para comunicar límites con elegancia sin parecer agresiva.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOS 4 EJES DE PODER (SECCIÓN OSCURA) -->
+    <section id="ejes" class="section-dark" aria-labelledby="ejes-title">
+      <div class="container section-inner">
+        <p class="eyebrow" style="text-align: center;">Saber Estar Contemporáneo</p>
+        <h2 id="ejes-title" style="text-align: center; color: var(--text-light);">Los 4 Ejes de tu Poder Sereno</h2>
+        <p class="section-lead" style="text-align: center; margin-left: auto; margin-right: auto; color: rgba(255, 255, 255, 0.75);">
+          Un sistema estructurado para dominar las reglas invisibles de las relaciones públicas y la influencia de alto nivel.
+        </p>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <h3>Autoridad Silenciosa</h3>
+            <p>Aprende a ocupar tu espacio físico y energético para que ser escuchada sea la norma natural en la mesa de decisiones, no un esfuerzo agotador.</p>
+          </div>
+          <div class="pillar-card">
+            <h3>Los Códigos de la Élite</h3>
+            <p>Domina el lenguaje no verbal del poder corporativo para moverte con absoluta fluidez en entornos de alta dirección, eliminando la sensación de no encajar.</p>
+          </div>
+          <div class="pillar-card">
+            <h3>Imagen de Mando</h3>
+            <p>Alinearemos estratégicamente tu estética para que comunique tu estatus, liderazgo y capacidad intelectual antes de que pronuncies una sola palabra.</p>
+          </div>
+          <div class="pillar-card">
+            <h3>Límites con Elegancia</h3>
+            <p>Gestiona la política de oficina, discrepa con asertividad y resuelve conflictos complejos sin perder jamás la compostura ni la sofisticación.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EL METODO / ACOMPAÑAMIENTO -->
+    <section id="metodo" aria-labelledby="metodo-title">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">La Metodología</p>
+          <h2 id="metodo-title">Un plan a tu medida y respaldo permanente hasta lograrlo</h2>
+          <p>
+            En <strong>Regidora</strong> el acompañamiento es totalmente diferente al de una academia tradicional. Aquí no aplicamos fórmulas genéricas. Tu industria y tus metas reales son nuestro único punto de partida.
+          </p>
+          <p>
+            Durante las 6 semanas de entrenamiento, nos enfocaremos en proporcionarte herramientas puramente tácticas, sin rodeos, asegurando que cada aprendizaje se traduzca en una ventaja competitiva en tu día a día.
+          </p>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <h3 style="margin-top:0; color: var(--accent);">Cómo lo haremos:</h3>
+            <ul class="steps-list">
+              <li>
+                <span><strong>Plan de Trabajo Estratégico:</strong> Analizaremos tus objetivos específicos en la primera sesión y trazaré una hoja de ruta exclusiva conforme a tu realidad profesional.</span>
+              </li>
+              <li>
+                <span><strong>Inmersión Directa Conmigo:</strong> Encontraras clases estructuradas y nos reuniremos de forma uno a uno cada dos semanas para hacer un seguimiento real, cara a cara, de tu evolución.</span>
+              </li>
+              <li>
+                <span><strong>Respaldo Permanente:</strong> No te dejamos sola con la teoría. Cuentas con soporte y acompañamiento incondicional vía canal directo para resolver dudas estratégicas antes de esa reunión o cena de negocios crucial.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVERSIÓN + PRECIO -->
+    <section id="inversion" class="section-alt" aria-labelledby="inversion-title">
+      <div class="container value-stack">
+        <div>
+          <h2 id="inversion-title">La Inversión en tu Reputación</h2>
+          <p>
+            La pregunta real que debes hacerte hoy no es si vale la pena invertir, sino: *¿cuánto te ha costado ya ese ascenso que se desvió en el camino, o ese cliente premium que prefirió a tu competencia simplemente porque no le transmitiste la seguridad de una líder?*
+          </p>
+          <p>
+            El mercado suele ser indiferente con quienes no saben posicionarse. No premia a la que más trabaja; premia a la que mejor sabe proyectar su valor.
+          </p>
+          <p>
+            Esta inversión de <strong>$1,700 USD</strong> no es un gasto: es un atajo para dejar de ser una promesa y consolidarte como una autoridad indiscutible en tu sector.
+          </p>
+        </div>
+
+        <aside class="highlight-box" aria-label="Precio y condiciones del programa Regidora" style="background-color: var(--bg-soft);">
+          <p class="eyebrow">Aceleradora Regidora</p>
+          <p class="price-tag">
+            $1,700 USD <span>/ pago único</span>
+          </p>
+          <p class="value-note">
+            Mentoría uno a uno, plan de trabajo estratégico individual y acompañamiento directo conmigo.
+          </p>
+
+          <a href="https://estreno.campuslaetiquette.com/aplicar-regidora" class="btn btn-primary" style="margin-top:1.1rem; width:100%;">
+            Aplicar a Regidora
+          </a>
+
+          <p class="value-note" style="margin-top:0.8rem;">
+            * El cupo queda oficialmente confirmado únicamente tras validar tu perfil en nuestra Sesión de Claridad.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FILTRO EXCLUSIVO -->
+    <section id="filtro" aria-labelledby="filtro-title">
+      <div class="container section-inner">
+        <div class="guarantee">
+          <h2 id="filtro-title" style="font-size: 1.6rem; color: var(--accent); margin-bottom: 0.6rem;">El Filtro de ALDEA: Solo 10 cupos disponibles</h2>
+          <p>
+            Para poder entregarte mi tiempo enfocado y llevar tu proceso de forma completamente personalizada, <strong>solo abro 10 cupos para Regidora por cohorte</strong>. 
+          </p>
+          <p>
+            Este programa es exclusivo para profesionales dispuestas a confrontar verdades incómodas sobre cómo las perciben, con el fin de transformarlas en autoridad real. 
+          </p>
+          <p>
+            Si buscas validación emocional o grupos de autoayuda, tu lugar es *Ciudadana*. Pero si estás lista para revolucionar tu estrategia de relaciones públicas y elevar tu estándar de forma irreversible, bienvenida.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="cta-final" class="section-alt" aria-labelledby="cta-final-title">
+      <div class="container cta-final">
+        <h2 id="cta-final-title">Pon tu presencia a la altura de tu intelecto</h2>
+        <p>
+          La mesa está servida. Si estás lista para dejar de adivinar las reglas invisibles y empezar a reclamar el lugar que te pertenece por capacidad, el primer paso es postularte para una sesión de diagnóstico.
+        </p>
+
+        <a href="https://estreno.campuslaetiquette.com/aplicar-regidora" class="btn btn-primary" style="margin-top: 1rem; margin-bottom: 2rem;">
+          Aplicar a Regidora
+        </a>
+
+        <div class="signature">
+          <p class="signature-name">María Paula Camacho</p>
+          <p>Fundadora de ALDEA · El Arte de Saber Estar</p>
+        </div>
+
+        <div class="postdata">
+          <p>
+            <strong>P.D.</strong> En las próximas semanas, la forma en que tu entorno te responde cambiará radicalmente. Tus colegas, jefes y clientes notarán una autoridad y un saber estar que no sabrán explicar, pero que respetarán de inmediato. Tú solo sonreirás, sabiendo que finalmente tu exterior refleja tu verdadero poder.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> ALDEA · El Arte de Saber Estar</span>
+      <div class="footer-links">
+        <a href="/aviso-de-privacidad.html">Aviso de privacidad</a>
+        <a href="/terminos-y-condiciones.html">Términos y condiciones</a>
+        <a href="https://instagram.com/laetiquette" target="_blank" rel="noopener noreferrer">@laetiquette</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
