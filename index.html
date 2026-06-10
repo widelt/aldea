@@ -705,6 +705,11 @@
       position: relative;
     }
 
+    /* Tarjetas con badge necesitan espacio extra arriba */
+    .pricing-card:has(.pricing-badge) {
+      padding-top: calc(clamp(28px, 3vw, 40px) + 14px);
+    }
+
     .pricing-card--featured {
       background: var(--card-dark);
       border-color: transparent;
@@ -728,6 +733,32 @@
       padding: 5px 16px;
       border-radius: 20px;
       white-space: nowrap;
+    }
+
+    .pricing-badge--dark {
+      background: var(--brown-dark);
+    }
+
+    .pricing-card__price {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-top: -8px;
+    }
+
+    .pricing-card__price span {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+
+    .pricing-card--featured .pricing-card__price {
+      color: #fff;
+    }
+
+    .pricing-card--featured .pricing-card__price span {
+      color: rgba(255,255,255,0.6);
     }
 
     .pricing-card__icon {
@@ -1369,7 +1400,7 @@
           </div>
           <div>
             <h3 class="pricing-card__name">Regidora</h3>
-            <p class="pricing-card__tier">Programa 1 a 1 · 6 semanas</p>
+            <p class="pricing-card__tier">Programa Personalizado · 6 semanas</p>
           </div>
           <p class="pricing-card__price">USD $1,700</p>
           <p class="pricing-card__desc">
@@ -1397,7 +1428,7 @@
           </div>
           <div>
             <h3 class="pricing-card__name">Gobernadora</h3>
-            <p class="pricing-card__tier">Certificación · 9 semanas</p>
+            <p class="pricing-card__tier">Certificación de Élite · 9 semanas</p>
           </div>
           <p class="pricing-card__price">USD $3,333</p>
           <p class="pricing-card__desc">
