@@ -413,6 +413,13 @@
       margin-bottom: 20px;
     }
 
+    .hero__logo {
+      height: clamp(80px, 18vw, 200px);
+      width: auto;
+      margin: 0 auto 20px;
+      filter: drop-shadow(0 2px 40px rgba(0,0,0,0.25));
+    }
+
     .hero__tagline {
       font-family: var(--font-display);
       font-style: italic;
@@ -1049,7 +1056,7 @@
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="hero__content">
         <p class="hero__eyebrow">Bienvenida a</p>
-        <h1 class="hero__title">ALDEA</h1>
+        <img src="logo_blanco_nobg.webp" alt="ALDEA" class="hero__logo" />
         <p class="hero__tagline">El Arte de Saber Estar</p>
         <button class="hero__cta" onclick="document.getElementById('aldea').scrollIntoView({behavior:'smooth'})">
           Descubre más
