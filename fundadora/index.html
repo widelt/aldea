@@ -1,1 +1,1054 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conoce a María Paula, fundadora de Aldea — El Arte de Saber Estar. Su historia, su filosofía y la misión que cambió su vida." />
+  <meta property="og:title" content="Conoce a la Fundadora — ALDEA" />
+  <meta property="og:description" content="La historia de María Paula y cómo nació Aldea, más allá de la etiqueta." />
+  <meta property="og:type" content="website" />
+  <title>Conoce a la Fundadora — ALDEA</title>
 
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1251616755300595');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1251616755300595&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="theme-color" content="#FAF7F2" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap&font-display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       CSS CUSTOM PROPERTIES
+    ============================================= */
+    :root {
+      --cream: #F5F0E8;
+      --cream-light: #FAF7F2;
+      --warm-white: #FEFCF8;
+      --brown-dark: #2C1810;
+      --brown-medium: #8B4513;
+      --terracotta: #A0522D;
+      --terracotta-btn: #8B3A2A;
+      --terracotta-hover: #7A3020;
+      --card-dark: #1E1410;
+      --card-dark-2: #241810;
+      --text-dark: #2C2016;
+      --text-medium: #5C4A3A;
+      --text-light: #8A7060;
+      --border-light: rgba(139, 69, 19, 0.15);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Montserrat', sans-serif;
+      --nav-height: 64px;
+      --section-pad: clamp(60px, 8vw, 120px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--cream-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* Typography helpers */
+    .label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.15;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      font-weight: 300;
+      color: var(--text-medium);
+      line-height: 1.7;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--terracotta);
+      margin: 16px auto 0;
+      opacity: 0.6;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+      border: 1.5px solid transparent;
+      text-align: center;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--terracotta-btn); color: #fff; border-color: var(--terracotta-btn); }
+    .btn-primary:hover { background: var(--terracotta-hover); border-color: var(--terracotta-hover); }
+    .btn-outline { background: transparent; color: var(--text-dark); border-color: rgba(44, 24, 16, 0.35); }
+    .btn-outline:hover { background: rgba(44, 24, 16, 0.06); border-color: rgba(44, 24, 16, 0.5); }
+    .btn-outline-light { background: transparent; color: #fff; border-color: rgba(255,255,255,0.4); }
+    .btn-outline-light:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+
+    /* =============================================
+       NAVBAR
+    ============================================= */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(24px, 5vw, 72px);
+      background: rgba(250, 247, 242, 0.97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(180, 160, 140, 0.22);
+      box-shadow: 0 1px 16px rgba(100, 70, 40, 0.07);
+    }
+
+    .navbar__logo { display: flex; align-items: center; }
+    .navbar__logo-white, .navbar__logo-black {
+      height: 36px; width: auto;
+      transition: opacity 0.45s ease;
+      position: absolute;
+    }
+    .navbar__logo-white { opacity: 0; }
+    .navbar__logo-black { opacity: 1; }
+    .navbar__logo::after {
+      content: ''; display: block;
+      height: 36px; width: 120px;
+    }
+
+    .navbar__nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 48px);
+    }
+
+    .navbar__nav a:not(.btn) {
+      font-family: var(--font-body);
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      transition: color 0.2s ease;
+    }
+    .navbar__nav a:not(.btn):hover { color: var(--terracotta); }
+
+    .navbar__hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px;
+      background: none; border: none;
+    }
+    .navbar__hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--text-dark);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .navbar__hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .navbar__hamburger.open span:nth-child(2) { opacity: 0; }
+    .navbar__hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Dropdown desktop */
+    .navbar__dropdown { position: relative; }
+    .navbar__dropdown-toggle {
+      display: flex; align-items: center; gap: 5px;
+      font-family: var(--font-body); font-size: 12px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-dark); background: none; border: none;
+      cursor: pointer; padding: 0;
+      transition: color 0.2s ease;
+    }
+    .navbar__dropdown-toggle:hover { color: var(--terracotta); }
+    .navbar__dropdown-toggle svg { transition: transform 0.25s ease; flex-shrink: 0; }
+    .navbar__dropdown.open .navbar__dropdown-toggle svg { transform: rotate(180deg); }
+
+    .navbar__dropdown-menu {
+      position: absolute; top: calc(100% + 14px); left: 50%;
+      transform: translateX(-50%);
+      background: rgba(254, 252, 248, 0.98);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-light);
+      border-radius: 10px; padding: 8px 0; min-width: 210px;
+      box-shadow: 0 12px 40px rgba(60, 30, 10, 0.12);
+      list-style: none;
+      opacity: 0; visibility: hidden;
+      transform: translateX(-50%) translateY(-6px);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      z-index: 200;
+    }
+    .navbar__dropdown.open .navbar__dropdown-menu {
+      opacity: 1; visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .navbar__dropdown-menu li a {
+      display: block; padding: 10px 20px;
+      font-family: var(--font-body); font-size: 12px; font-weight: 500;
+      letter-spacing: 0.08em; color: var(--text-dark) !important;
+      transition: background 0.15s, color 0.15s; white-space: nowrap;
+    }
+    .navbar__dropdown-menu li a:hover {
+      background: rgba(139, 58, 42, 0.06);
+      color: var(--terracotta) !important;
+    }
+
+    /* Dropdown mobile */
+    .mobile-dropdown { border-bottom: 1px solid var(--border-light); }
+    .mobile-dropdown__toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; font-family: var(--font-body); font-size: 13px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-dark); background: none; border: none;
+      cursor: pointer; padding: 8px 0;
+    }
+    .mobile-dropdown__toggle svg { transition: transform 0.25s ease; }
+    .mobile-dropdown.open .mobile-dropdown__toggle svg { transform: rotate(180deg); }
+    .mobile-dropdown__menu { display: none; flex-direction: column; gap: 0; padding: 4px 0 12px 12px; list-style: none; }
+    .mobile-dropdown.open .mobile-dropdown__menu { display: flex; }
+    .mobile-dropdown__menu li a {
+      display: block; font-size: 12px; font-weight: 400; letter-spacing: 0.08em;
+      color: var(--text-medium); padding: 7px 0;
+      transition: color 0.2s;
+    }
+    .mobile-dropdown__menu li a:hover { color: var(--terracotta); }
+
+    .navbar__mobile-menu {
+      display: none; position: fixed;
+      top: var(--nav-height); left: 0; right: 0;
+      background: rgba(250, 247, 242, 0.98);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      padding: 24px clamp(24px, 6vw, 48px) 32px;
+      border-bottom: 1px solid var(--border-light);
+      flex-direction: column; gap: 20px; z-index: 99;
+    }
+    .navbar__mobile-menu.open { display: flex; }
+    .navbar__mobile-menu a {
+      font-family: var(--font-body); font-size: 13px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-dark); padding: 8px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    /* =============================================
+       HERO FUNDADORA
+    ============================================= */
+    .hero-fundadora {
+      position: relative;
+      padding-top: var(--nav-height);
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      overflow: hidden;
+    }
+
+    .hero-fundadora__image-col {
+      position: relative;
+      min-height: 600px;
+    }
+
+    .hero-fundadora__photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-fundadora__image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(250,247,242,0) 60%,
+        rgba(250,247,242,1) 100%
+      );
+    }
+
+    .hero-fundadora__content-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(60px, 8vw, 120px) clamp(40px, 6vw, 96px) clamp(60px, 8vw, 120px) clamp(24px, 3vw, 48px);
+      background: var(--cream-light);
+    }
+
+    .hero-fundadora__eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+
+    .hero-fundadora__name {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .hero-fundadora__role {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 300;
+      color: var(--text-light);
+      margin-bottom: 32px;
+    }
+
+    .hero-fundadora__intro {
+      font-family: var(--font-body);
+      font-size: clamp(0.88rem, 1.4vw, 0.98rem);
+      font-weight: 300;
+      color: var(--text-medium);
+      line-height: 1.85;
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+
+    .hero-fundadora__divider {
+      width: 48px;
+      height: 1px;
+      background: var(--terracotta);
+      opacity: 0.6;
+      margin-bottom: 32px;
+    }
+
+    /* =============================================
+       SECTION: LA HISTORIA
+    ============================================= */
+    .section-historia {
+      background: var(--warm-white);
+      padding: var(--section-pad) clamp(24px, 8vw, 120px);
+    }
+
+    .section-historia__inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .section-historia__header {
+      text-align: center;
+      margin-bottom: clamp(48px, 6vw, 80px);
+    }
+
+    .historia-block {
+      margin-bottom: clamp(32px, 5vw, 56px);
+    }
+
+    .historia-block__lead {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+
+    .historia-block__body {
+      font-family: var(--font-body);
+      font-size: clamp(0.88rem, 1.4vw, 0.98rem);
+      font-weight: 300;
+      color: var(--text-medium);
+      line-height: 1.9;
+    }
+
+    .historia-block__body p {
+      margin-bottom: 18px;
+    }
+
+    .historia-block__body p:last-child { margin-bottom: 0; }
+
+    .historia-block__body strong {
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .historia-block__body em {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--terracotta);
+      font-size: 1.08em;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 2px solid var(--terracotta);
+      padding: 20px 28px;
+      margin: 40px 0;
+      background: var(--cream);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .pull-quote p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       SECTION: ALDEA NACIÓ
+    ============================================= */
+    .section-nacio {
+      background: var(--card-dark);
+      padding: var(--section-pad) clamp(24px, 8vw, 120px);
+    }
+
+    .section-nacio__inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-nacio__eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(160, 82, 45, 0.9);
+      margin-bottom: 24px;
+    }
+
+    .section-nacio__title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.0;
+      margin-bottom: 32px;
+      letter-spacing: 0.04em;
+    }
+
+    .section-nacio__body {
+      font-family: var(--font-body);
+      font-size: clamp(0.88rem, 1.4vw, 0.98rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.9;
+    }
+
+    .section-nacio__body p { margin-bottom: 18px; }
+    .section-nacio__body p:last-child { margin-bottom: 0; }
+
+    .section-nacio__body .highlight {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.15em;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .section-nacio__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 28px 0;
+    }
+
+    .section-nacio__list li {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.02em;
+    }
+
+    .section-nacio__question {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.5;
+      margin: 32px 0;
+      padding: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* =============================================
+       SECTION: FILOSOFÍA / MISIÓN
+    ============================================= */
+    .section-mision {
+      background: var(--cream-light);
+      padding: var(--section-pad) clamp(24px, 8vw, 120px);
+    }
+
+    .section-mision__inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .section-mision__header {
+      text-align: center;
+      margin-bottom: clamp(48px, 6vw, 80px);
+    }
+
+    .mision-body {
+      font-family: var(--font-body);
+      font-size: clamp(0.88rem, 1.4vw, 0.98rem);
+      font-weight: 300;
+      color: var(--text-medium);
+      line-height: 1.9;
+    }
+
+    .mision-body p { margin-bottom: 20px; }
+    .mision-body p:last-child { margin-bottom: 0; }
+
+    .mision-body strong {
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .mision-body em {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--terracotta);
+      font-size: 1.08em;
+    }
+
+    .mision-closing {
+      margin-top: 48px;
+      padding: 40px;
+      background: var(--card-dark);
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .mision-closing__text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    /* =============================================
+       SCROLL REVEAL
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      background: var(--card-dark);
+      color: rgba(255,255,255,0.7);
+      padding: clamp(48px, 7vw, 80px) clamp(24px, 8vw, 120px) 0;
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: clamp(32px, 5vw, 80px);
+      padding-bottom: clamp(40px, 5vw, 64px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer__logo-img { height: 48px; width: auto; margin-bottom: 16px; opacity: 0.92; }
+    .footer__desc { font-size: 0.85rem; line-height: 1.8; color: rgba(255,255,255,0.55); max-width: 280px; }
+    .footer__col-title {
+      font-family: var(--font-body); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); margin-bottom: 20px;
+    }
+    .footer__links { display: flex; flex-direction: column; gap: 12px; }
+    .footer__links a { font-size: 0.88rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .footer__links a:hover { color: #fff; }
+    .footer__bottom { padding: 20px 0; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 900px) {
+      .hero-fundadora {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero-fundadora__image-col {
+        height: 65vw;
+        min-height: 340px;
+        max-height: 520px;
+      }
+      .hero-fundadora__image-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(250,247,242,0) 50%,
+          rgba(250,247,242,0.85) 100%
+        );
+      }
+      .hero-fundadora__content-col {
+        padding: 40px clamp(24px, 6vw, 60px) 60px;
+      }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+      .footer__grid > :first-child { grid-column: 1 / -1; }
+      .navbar__nav { display: none; }
+      .navbar__hamburger { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      .footer__grid { grid-template-columns: 1fr; }
+      .mision-closing { padding: 28px 20px; }
+      .pull-quote { padding: 16px 20px; }
+      .section-nacio__question { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="navbar" id="navbar" role="banner">
+    <a href="/" class="navbar__logo" aria-label="ALDEA inicio">
+      <img src="../logo_blanco_nobg.webp" alt="ALDEA" class="navbar__logo-white" />
+      <img src="../logo_negro_nobg.webp" alt="ALDEA" class="navbar__logo-black" />
+    </a>
+    <nav class="navbar__nav" aria-label="Navegación principal">
+      <a href="/#aldea">Aldea</a>
+
+      <div class="navbar__dropdown">
+        <button class="navbar__dropdown-toggle" aria-expanded="false">
+          Fundadora
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="navbar__dropdown-menu" role="menu">
+          <li><a href="/fundadora/index.html" role="menuitem">Conoce a la Fundadora</a></li>
+          <li><a href="/decretos-de-aldea/index.html" role="menuitem">Decretos de Aldea</a></li>
+          <li><a href="/comunidad-de-fundadoras/index.html" role="menuitem">Comunidad de Fundadoras</a></li>
+        </ul>
+      </div>
+
+      <div class="navbar__dropdown">
+        <button class="navbar__dropdown-toggle" aria-expanded="false">
+          Roles
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="navbar__dropdown-menu" role="menu">
+          <li><a href="/ciudadana/index.html" role="menuitem">Ciudadana</a></li>
+          <li><a href="/regidora/index.html" role="menuitem">Regidora</a></li>
+          <li><a href="/gobernadora/index.html" role="menuitem">Gobernadora</a></li>
+        </ul>
+      </div>
+
+      <a href="/#la-plaza">La Plaza</a>
+
+      <div class="navbar__dropdown">
+        <button class="navbar__dropdown-toggle" aria-expanded="false">
+          Miniserie
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="navbar__dropdown-menu" role="menu">
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener" role="menuitem">Episodio 1</a></li>
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener" role="menuitem">Episodio 2</a></li>
+        </ul>
+      </div>
+
+      <a href="/#programas" class="btn btn-primary">Entrar</a>
+    </nav>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile menu -->
+  <nav class="navbar__mobile-menu" id="mobile-menu" aria-label="Menú móvil">
+    <a href="/#aldea">Aldea</a>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown__toggle" aria-expanded="false">
+        Fundadora
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="mobile-dropdown__menu">
+        <li><a href="/fundadora/index.html">Conoce a la Fundadora</a></li>
+        <li><a href="/decretos-de-aldea/index.html">Decretos de Aldea</a></li>
+        <li><a href="/comunidad-de-fundadoras/index.html">Comunidad de Fundadoras</a></li>
+      </ul>
+    </div>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown__toggle" aria-expanded="false">
+        Roles
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="mobile-dropdown__menu">
+        <li><a href="/ciudadana/index.html">Ciudadana</a></li>
+        <li><a href="/regidora/index.html">Regidora</a></li>
+        <li><a href="/gobernadora/index.html">Gobernadora</a></li>
+      </ul>
+    </div>
+    <a href="/#la-plaza">La Plaza</a>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown__toggle" aria-expanded="false">
+        Miniserie
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="mobile-dropdown__menu">
+        <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener">Episodio 1</a></li>
+        <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener">Episodio 2</a></li>
+      </ul>
+    </div>
+    <a href="/#programas" class="btn btn-primary" style="text-align:center;margin-top:4px;">Entrar</a>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — Fotografía + Presentación
+    ============================================================ -->
+    <section class="hero-fundadora" aria-label="Conoce a la fundadora">
+      <div class="hero-fundadora__image-col">
+        <img
+          src="../mariapau.webp"
+          alt="María Paula, fundadora de Aldea"
+          class="hero-fundadora__photo"
+          width="960"
+          height="1200"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="hero-fundadora__image-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-fundadora__content-col">
+        <p class="hero-fundadora__eyebrow reveal">Fundadora de Aldea</p>
+        <h1 class="hero-fundadora__name reveal reveal-delay-1">María Paula</h1>
+        <p class="hero-fundadora__role reveal reveal-delay-2">El Arte de Saber Estar</p>
+        <div class="hero-fundadora__divider reveal reveal-delay-2"></div>
+        <p class="hero-fundadora__intro reveal reveal-delay-3">
+          Más de una década enseñando etiqueta y protocolo la llevó a una pregunta que lo cambiaría todo.
+          La respuesta llegó cuando se convirtió en mamá. Hoy, su historia es la historia de Aldea.
+        </p>
+        <div class="reveal reveal-delay-4">
+          <a href="#la-historia" class="btn btn-primary">Leer su historia</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN: LA HISTORIA
+    ============================================================ -->
+    <section class="section-historia" id="la-historia" aria-label="La historia de la fundadora">
+      <div class="section-historia__inner">
+        <div class="section-historia__header reveal">
+          <p class="label">Su historia</p>
+          <div class="divider"></div>
+          <h2 class="section-title" style="margin-top:20px;">El día que la etiqueta<br><em style="font-style:italic;color:var(--terracotta);">dejó de serlo todo</em></h2>
+        </div>
+
+        <!-- Bloque 1: Los primeros años -->
+        <div class="historia-block reveal">
+          <p class="historia-block__lead">
+            "Durante más de 10 años enseñé etiqueta, protocolo y saber estar."
+          </p>
+          <div class="historia-block__body">
+            <p>
+              Escribió dos libros. Formó a miles de personas. Dedicó su vida entera a una disciplina que la apasionaba profundamente.
+              Y sin embargo, había una pregunta que cada vez resonaba con más fuerza dentro de ella:
+              <em>¿de verdad las personas necesitan más reglas?</em>
+            </p>
+          </div>
+        </div>
+
+        <!-- Pull quote -->
+        <div class="pull-quote reveal">
+          <p>"La respuesta llegó de la forma más inesperada: cuando me convertí en mamá."</p>
+        </div>
+
+        <!-- Bloque 2: La maternidad -->
+        <div class="historia-block reveal">
+          <p class="historia-block__lead">
+            La maternidad tuvo una forma hermosa de cambiar todo lo que creía saber.
+          </p>
+          <div class="historia-block__body">
+            <p>
+              La obligó a mirar el mundo desde otro lugar. Vio a Amelia, su hija, aprender observando, imitando, sintiendo.
+              Vio que los valores no se enseñan con manuales ni con reglas.
+              Que la consideración no nace de una norma.
+              Que la empatía no aparece porque sí.
+            </p>
+            <p>
+              <strong>Ame</strong> le hizo entender algo esencial: que es más poderoso el ejemplo,
+              enseñar desde el amor y guiar con decisión.
+              Entonces entendió algo que cambiaría su vida para siempre:
+              <em>el comportamiento humano va mucho más allá de la etiqueta.</em>
+            </p>
+            <p>
+              Mucho más allá de saber qué hacer en una mesa, de un tip rápido, de una regla de cortesía.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pull quote 2 -->
+        <div class="pull-quote reveal">
+          <p>"Ese fue el día en que la etiqueta murió para mí. O mejor dicho, el día en que dejó de serlo todo."</p>
+        </div>
+
+        <!-- Bloque 3: El método -->
+        <div class="historia-block reveal">
+          <div class="historia-block__body">
+            <p>
+              Hacía años había creado su metodología, <em>El Arte de Saber Estar</em>, pero nunca le había dado tanta fuerza y poder como hasta ese momento.
+              Porque descubrió que su verdadera misión estaba en ayudar a las personas a relacionarse mejor, a comunicarse mejor,
+              a construir una reputación sólida, a desarrollar <strong>criterio, presencia, fluidez social y humanidad.</strong>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN: ASÍ NACIÓ ALDEA (fondo oscuro)
+    ============================================================ -->
+    <section class="section-nacio" aria-label="Así nació Aldea">
+      <div class="section-nacio__inner">
+        <p class="section-nacio__eyebrow reveal">El origen</p>
+        <h2 class="section-nacio__title reveal reveal-delay-1">Así nació<br>Aldea.</h2>
+
+        <div class="section-nacio__body reveal reveal-delay-2">
+          <p>No como una academia. No como una membresía. No como un curso más.</p>
+        </div>
+
+        <ul class="section-nacio__list reveal reveal-delay-2" aria-label="Lo que Aldea no es">
+          <li>— No como una academia.</li>
+          <li>— No como una membresía.</li>
+          <li>— No como un curso más.</li>
+        </ul>
+
+        <blockquote class="section-nacio__question reveal reveal-delay-3">
+          "¿Cómo sería el mundo si aprendiéramos a convivir con la misma intención con la que aprendemos una profesión?"
+        </blockquote>
+
+        <div class="section-nacio__body reveal reveal-delay-3">
+          <p>
+            Aldea nació como la respuesta a esa pregunta. Una pregunta que lleva años haciéndose.
+          </p>
+          <p>
+            <span class="highlight">
+              Hoy puede decir, con absoluta honestidad, que este es el proyecto más importante de su vida.
+            </span>
+            Porque por primera vez siente que no está enseñando una materia.
+            Está compartiendo una filosofía de vida. Una forma de habitar el mundo.
+            Una visión que integra todo lo que ha aprendido como profesional, como mujer y como madre.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN: MISIÓN Y CIERRE
+    ============================================================ -->
+    <section class="section-mision" aria-label="La misión de Aldea">
+      <div class="section-mision__inner">
+        <div class="section-mision__header reveal">
+          <p class="label">Una filosofía de vida</p>
+          <div class="divider"></div>
+          <h2 class="section-title" style="margin-top:20px;">Las personas extraordinarias<br>se <em style="font-style:italic;color:var(--terracotta);">construyen</em></h2>
+        </div>
+
+        <div class="mision-body reveal reveal-delay-1">
+          <p>
+            Y si algo ha aprendido en este camino, es que <strong>las personas extraordinarias no nacen siendo extraordinarias.</strong>
+            Se construyen. Decisión tras decisión. Conversación tras conversación. Relación tras relación.
+          </p>
+          <p>
+            Por eso Aldea existe. Porque cree profundamente que <em>todas merecemos aprender a ser memorables</em> y destacar.
+          </p>
+        </div>
+
+        <div class="mision-closing reveal reveal-delay-2">
+          <p class="mision-closing__text">
+            "Este es el proyecto más importante de mi vida. Porque aquí no estoy enseñando una materia.<br>
+            Estoy compartiendo una <em style="color:rgba(232,196,160,0.95);">filosofía de vida.</em>"
+          </p>
+          <a href="/#programas" class="btn btn-outline-light">Quiero ser parte de Aldea</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__grid">
+      <div>
+        <img src="../logo_blanco_nobg.webp" alt="ALDEA" class="footer__logo-img" />
+        <p class="footer__desc">El Arte de Saber Estar. Un espacio donde cada mujer encuentra su lugar y transforma su presencia en el mundo.</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Navegar</p>
+        <ul class="footer__links">
+          <li><a href="/#aldea">Aldea</a></li>
+          <li><a href="/fundadora/index.html">Conoce a la Fundadora</a></li>
+          <li><a href="/decretos-de-aldea/index.html">Decretos de Aldea</a></li>
+          <li><a href="/comunidad-de-fundadoras/index.html">Comunidad de Fundadoras</a></li>
+          <li><a href="/#programas">Roles</a></li>
+          <li><a href="/#la-plaza">La Plaza</a></li>
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener">Miniserie — Ep. 1</a></li>
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener">Miniserie — Ep. 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Contacto</p>
+        <ul class="footer__links">
+          <li><a href="mailto:hola@aldealaetiquette.com">hola@aldealaetiquette.com</a></li>
+          <li><a href="https://www.instagram.com/laetiquette/" target="_blank" rel="noopener">@laetiquette</a></li>
+          <li><a href="https://api.whatsapp.com/send?phone=+573054068714&text=%C2%A1Hola!%20Requiero%20m%C3%A1s%20informaci%C3%B3n%20acceder%20a%20*ALDEA*" target="_blank" rel="noopener">+57 305 4068714</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 ALDEA. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // ── Dropdowns desktop ─────────────────────────────────────────
+    document.querySelectorAll('.navbar__dropdown').forEach(dropdown => {
+      const toggle = dropdown.querySelector('.navbar__dropdown-toggle');
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        document.querySelectorAll('.navbar__dropdown').forEach(other => {
+          if (other !== dropdown) {
+            other.classList.remove('open');
+            other.querySelector('.navbar__dropdown-toggle').setAttribute('aria-expanded', false);
+          }
+        });
+      });
+    });
+
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.navbar__dropdown.open').forEach(d => {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle').setAttribute('aria-expanded', false);
+      });
+    });
+
+    // ── Dropdowns mobile ──────────────────────────────────────────
+    document.querySelectorAll('.mobile-dropdown__toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const parent = toggle.closest('.mobile-dropdown');
+        const isOpen = parent.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+    });
+
+    // ── Hamburger ─────────────────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Scroll reveal ─────────────────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── Smooth scroll ─────────────────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
