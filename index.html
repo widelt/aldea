@@ -686,9 +686,10 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: clamp(16px, 2.5vw, 28px);
-      max-width: 1100px;
+      width: 100%;
+      max-width: 1200px;
       margin: 0 auto;
       align-items: stretch;
     }
@@ -1047,22 +1048,41 @@
     /* =============================================
        RESPONSIVE — TABLET (max 900px)
     ============================================= */
-    @media (max-width: 900px) {
+    @media (min-width: 769px) {
       .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 480px;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
       }
+    }
 
-      .pricing-card--featured {
-        transform: none;
-      }
-
+    @media (max-width: 900px) {
       .footer__grid {
         grid-template-columns: 1fr 1fr;
       }
 
       .footer__grid > :first-child {
         grid-column: 1 / -1;
+      }
+
+      .navbar__nav {
+        display: none;
+      }
+
+      .navbar__hamburger {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 32px;
+      }
+
+      .pricing-card--featured {
+        transform: none;
       }
     }
 
@@ -1074,16 +1094,8 @@
         --nav-height: 56px;
       }
 
-      .navbar__nav {
-        display: none;
-      }
-
-      .navbar__hamburger {
-        display: flex;
-      }
-
-      .hero__title {
-        font-size: clamp(4rem, 20vw, 6rem);
+      .hero__logo {
+        height: clamp(60px, 14vw, 120px);
       }
 
       .section-aldea,
@@ -1342,7 +1354,7 @@
             <li>Comunidad privada</li>
             <li>Recursos descargables</li>
           </ul>
-          <a href="#" class="btn btn-outline" role="button">Quiero Entrar</a>
+          <a href="/ciudadana/index.html" class="btn btn-outline" role="button">Suscribirme</a>
         </div>
 
         <!-- Regidora — Featured -->
@@ -1367,7 +1379,7 @@
             <li>Creación de marca personal</li>
             <li>Plan de proyección profesional</li>
           </ul>
-          <a href="#" class="btn btn-primary" role="button">Quiero Entrar</a>
+          <a href="/regidora/index.html" class="btn btn-primary" role="button">Quiero Aplicar</a>
         </div>
 
         <!-- Gobernadora -->
@@ -1391,7 +1403,7 @@
             <li>Formación como facilitadora</li>
             <li>Kit de embajadora</li>
           </ul>
-          <a href="#" class="btn btn-outline" role="button">Quiero Entrar</a>
+          <a href="/gobernadora/index.html" class="btn btn-outline" role="button">Quiero Certificarme</a>
         </div>
 
       </div>
