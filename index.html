@@ -316,6 +316,154 @@
     .navbar__hamburger.open span:nth-child(2) { opacity: 0; }
     .navbar__hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
+    /* ── Dropdown desktop ───────────────────────────────────────── */
+    .navbar__dropdown {
+      position: relative;
+    }
+
+    .navbar__dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.45s ease, opacity 0.2s ease;
+    }
+
+    .navbar__dropdown-toggle:hover {
+      color: #fff;
+      opacity: 0.75;
+    }
+
+    .navbar.scrolled .navbar__dropdown-toggle {
+      color: var(--text-dark);
+    }
+
+    .navbar.scrolled .navbar__dropdown-toggle:hover {
+      color: var(--terracotta);
+      opacity: 1;
+    }
+
+    .navbar__dropdown-toggle svg {
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .navbar__dropdown.open .navbar__dropdown-toggle svg {
+      transform: rotate(180deg);
+    }
+
+    .navbar__dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(254, 252, 248, 0.98);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 8px 0;
+      min-width: 210px;
+      box-shadow: 0 12px 40px rgba(60, 30, 10, 0.12);
+      list-style: none;
+      /* Animación de entrada */
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-6px);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      z-index: 200;
+    }
+
+    .navbar__dropdown.open .navbar__dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .navbar__dropdown-menu li a {
+      display: block;
+      padding: 10px 20px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--text-dark) !important;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .navbar__dropdown-menu li a:hover {
+      background: rgba(139, 58, 42, 0.06);
+      color: var(--terracotta) !important;
+      opacity: 1 !important;
+    }
+
+    /* ── Dropdown mobile ────────────────────────────────────────── */
+    .mobile-dropdown {
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .mobile-dropdown__toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px 0;
+    }
+
+    .mobile-dropdown__toggle svg {
+      transition: transform 0.25s ease;
+    }
+
+    .mobile-dropdown.open .mobile-dropdown__toggle svg {
+      transform: rotate(180deg);
+    }
+
+    .mobile-dropdown__menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      padding: 4px 0 12px 12px;
+      list-style: none;
+    }
+
+    .mobile-dropdown.open .mobile-dropdown__menu {
+      display: flex;
+    }
+
+    .mobile-dropdown__menu li a {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--text-medium);
+      padding: 7px 0;
+      border-bottom: none;
+      transition: color 0.2s;
+    }
+
+    .mobile-dropdown__menu li a:hover {
+      color: var(--terracotta);
+    }
+
     /* Mobile menu */
     .navbar__mobile-menu {
       display: none;
@@ -1027,9 +1175,51 @@
       <img src="logo_negro_nobg.webp" alt="ALDEA" class="navbar__logo-black" />
     </a>
     <nav class="navbar__nav" aria-label="Navegación principal">
+
+      <!-- ALDEA -->
       <a href="#aldea">Aldea</a>
-      <a href="#programas">Programas</a>
+
+      <!-- FUNDADORA -->
+      <div class="navbar__dropdown">
+        <button class="navbar__dropdown-toggle" aria-expanded="false">
+          Fundadora
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="navbar__dropdown-menu" role="menu">
+          <li><a href="/fundadora/index.html" role="menuitem">Conoce a la Fundadora</a></li>
+          <li><a href="/decretos-de-aldea/index.html" role="menuitem">Decretos de Aldea</a></li>
+          <li><a href="/comunidad-de-fundadoras/index.html" role="menuitem">Comunidad de Fundadoras</a></li>
+        </ul>
+      </div>
+
+      <!-- ROLES -->
+      <div class="navbar__dropdown">
+        <button class="navbar__dropdown-toggle" aria-expanded="false">
+          Roles
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="navbar__dropdown-menu" role="menu">
+          <li><a href="/ciudadana/index.html" role="menuitem">Ciudadana</a></li>
+          <li><a href="/regidora/index.html" role="menuitem">Regidora</a></li>
+          <li><a href="/gobernadora/index.html" role="menuitem">Gobernadora</a></li>
+        </ul>
+      </div>
+
+      <!-- LA PLAZA -->
       <a href="#la-plaza">La Plaza</a>
+
+      <!-- MINISERIE -->
+      <div class="navbar__dropdown">
+        <button class="navbar__dropdown-toggle" aria-expanded="false">
+          Miniserie
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="navbar__dropdown-menu" role="menu">
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener" role="menuitem">Episodio 1</a></li>
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener" role="menuitem">Episodio 2</a></li>
+        </ul>
+      </div>
+
       <a href="#programas" class="btn btn-primary">Entrar</a>
     </nav>
     <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
@@ -1040,8 +1230,47 @@
   <!-- Mobile menu -->
   <nav class="navbar__mobile-menu" id="mobile-menu" aria-label="Menú móvil">
     <a href="#aldea">Aldea</a>
-    <a href="#programas">Programas</a>
+
+    <!-- FUNDADORA mobile -->
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown__toggle" aria-expanded="false">
+        Fundadora
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="mobile-dropdown__menu">
+        <li><a href="/fundadora/index.html">Conoce a la Fundadora</a></li>
+        <li><a href="/decretos-de-aldea/index.html">Decretos de Aldea</a></li>
+        <li><a href="/comunidad-de-fundadoras/index.html">Comunidad de Fundadoras</a></li>
+      </ul>
+    </div>
+
+    <!-- ROLES mobile -->
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown__toggle" aria-expanded="false">
+        Roles
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="mobile-dropdown__menu">
+        <li><a href="/ciudadana/index.html">Ciudadana</a></li>
+        <li><a href="/regidora/index.html">Regidora</a></li>
+        <li><a href="/gobernadora/index.html">Gobernadora</a></li>
+      </ul>
+    </div>
+
     <a href="#la-plaza">La Plaza</a>
+
+    <!-- MINISERIE mobile -->
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown__toggle" aria-expanded="false">
+        Miniserie
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="mobile-dropdown__menu">
+        <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener">Episodio 1</a></li>
+        <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener">Episodio 2</a></li>
+      </ul>
+    </div>
+
     <a href="#programas" class="btn btn-primary" style="text-align:center;margin-top:4px;">Entrar</a>
   </nav>
 
@@ -1323,9 +1552,14 @@
       <div>
         <p class="footer__col-title">Navegar</p>
         <ul class="footer__links">
-          <li><a href="#aldea">¿Qué es Aldea?</a></li>
-          <li><a href="#programas">Programas</a></li>
+          <li><a href="#aldea">Aldea</a></li>
+          <li><a href="/fundadora/index.html">Conoce a la Fundadora</a></li>
+          <li><a href="/decretos-de-aldea/index.html">Decretos de Aldea</a></li>
+          <li><a href="/comunidad-de-fundadoras/index.html">Comunidad de Fundadoras</a></li>
+          <li><a href="#programas">Roles</a></li>
           <li><a href="#la-plaza">La Plaza</a></li>
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener">Miniserie — Ep. 1</a></li>
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener">Miniserie — Ep. 2</a></li>
         </ul>
       </div>
       <div>
@@ -1367,6 +1601,41 @@
     updateNavbar();
     window.addEventListener('scroll', updateNavbar, { passive: true });
     window.addEventListener('resize', updateNavbar, { passive: true });
+
+    // ── Dropdowns desktop ─────────────────────────────────────────
+    document.querySelectorAll('.navbar__dropdown').forEach(dropdown => {
+      const toggle = dropdown.querySelector('.navbar__dropdown-toggle');
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        // Cierra los demás
+        document.querySelectorAll('.navbar__dropdown').forEach(other => {
+          if (other !== dropdown) {
+            other.classList.remove('open');
+            other.querySelector('.navbar__dropdown-toggle').setAttribute('aria-expanded', false);
+          }
+        });
+      });
+    });
+
+    // Cierra dropdowns al hacer clic fuera
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.navbar__dropdown.open').forEach(d => {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle').setAttribute('aria-expanded', false);
+      });
+    });
+
+    // ── Dropdowns mobile ──────────────────────────────────────────
+    document.querySelectorAll('.mobile-dropdown__toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const parent = toggle.closest('.mobile-dropdown');
+        const isOpen = parent.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+    });
 
     // ── Hamburger menu ────────────────────────────────────────────
     const hamburger = document.getElementById('hamburger');
