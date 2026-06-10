@@ -383,11 +383,13 @@
 
 
 	.preview-video-wrapper {
-		margin: 1.8rem auto 1.6rem;
-		max-width: 640px;          /* ajusta según tu diseño */
-		border-radius: 18px;
-		overflow: hidden;
-		box-shadow: var(--shadow-soft);
+	  margin: 1.8rem auto 1.6rem;
+	  width: 45%;                /* ancho relativo al bloque de texto */
+	  max-width: 360px;          /* límite superior */
+	  min-width: 260px;          /* para que en móvil no quede demasiado pequeño */
+	  border-radius: 18px;
+	  overflow: hidden;
+	  box-shadow: var(--shadow-soft);
 	}
 
 	.preview-video {
