@@ -620,13 +620,10 @@
       margin-bottom: clamp(48px, 6vw, 80px);
     }
 
-    .section-aldea__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 6vw, 80px);
-      align-items: center;
-      max-width: 1100px;
+    .section-aldea__content {
+      max-width: 760px;
       margin: 0 auto;
+      text-align: center;
     }
 
     .section-aldea__text p {
@@ -648,35 +645,23 @@
       font-size: 1.05em;
     }
 
-    .section-aldea__card {
-      background: linear-gradient(145deg, #E8DDD0 0%, #D4C4B0 50%, #C8B49A 100%);
-      border-radius: 16px;
-      aspect-ratio: 3/4;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 48px 32px;
-      text-align: center;
+    /* Contenedor responsive del video 16:9 */
+    .section-aldea__video {
+      margin-top: 40px;
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 14px;
+      overflow: hidden;
       box-shadow: 0 20px 60px rgba(100, 60, 20, 0.12);
     }
 
-    .section-aldea__card-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--brown-dark);
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-
-    .section-aldea__card-sub {
-      font-family: var(--font-display);
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-      font-style: italic;
-      color: var(--terracotta);
-      letter-spacing: 0.02em;
+    .section-aldea__video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     /* =============================================
@@ -1063,21 +1048,6 @@
        RESPONSIVE — TABLET (max 900px)
     ============================================= */
     @media (max-width: 900px) {
-      .section-aldea__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-aldea__card {
-        aspect-ratio: 16/7;
-        max-width: 480px;
-        margin: 0 auto;
-        order: 2;
-      }
-
-      .section-aldea__text {
-        order: 1;
-      }
-
       .pricing-grid {
         grid-template-columns: 1fr;
         max-width: 480px;
@@ -1306,8 +1276,8 @@
         <div class="divider"></div>
       </div>
 
-      <div class="section-aldea__grid">
-        <div class="section-aldea__text reveal reveal-delay-1">
+      <div class="section-aldea__content reveal reveal-delay-1">
+        <div class="section-aldea__text">
           <p>
             Aldea es más que un programa de formación. Es un
             <strong>espacio donde habitar</strong>, una comunidad donde cada mujer
@@ -1322,9 +1292,14 @@
             Aquí no vienes de visita. Aquí <strong>te quedas</strong>.
           </p>
         </div>
-        <div class="section-aldea__card reveal reveal-delay-2" aria-hidden="true">
-          <p class="section-aldea__card-title">Saber estar</p>
-          <p class="section-aldea__card-sub">es saber ser</p>
+        <div class="section-aldea__video reveal reveal-delay-2">
+          <iframe
+            src="https://videomng.builderall.com/embed/1K8W4b0VW2/?autoplay=0&countdown=0&controls=1&allowpause=1"
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Bienvenida a ALDEA"
+            loading="lazy">
+          </iframe>
         </div>
       </div>
     </section>
