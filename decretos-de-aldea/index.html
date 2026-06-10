@@ -1,1 +1,1047 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Decretos de Aldea: la Constitución del Arte de Saber Estar. Los principios fundacionales para convivir con intención, elegancia y humanidad." />
+  <meta property="og:title" content="Decretos de Aldea — Constitución" />
+  <meta property="og:description" content="Los Decretos de Aldea: los principios que guían El Arte de Saber Estar." />
+  <meta property="og:type" content="website" />
+  <title>Decretos de Aldea — ALDEA</title>
 
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1251616755300595');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1251616755300595&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="theme-color" content="#1E1410" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap&font-display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #F5F0E8;
+      --cream-light: #FAF7F2;
+      --warm-white: #FEFCF8;
+      --brown-dark: #2C1810;
+      --brown-medium: #8B4513;
+      --terracotta: #A0522D;
+      --terracotta-btn: #8B3A2A;
+      --terracotta-hover: #7A3020;
+      --card-dark: #1E1410;
+      --card-dark-2: #241810;
+      --text-dark: #FDF5EC;
+      --text-medium: #D2B7A0;
+      --text-muted: #B29683;
+      --border-light: rgba(255, 255, 255, 0.12);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Montserrat', sans-serif;
+      --nav-height: 64px;
+      --section-pad: clamp(60px, 8vw, 120px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--card-dark);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(232, 196, 160, 0.9);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4.3rem);
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.15;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      font-weight: 300;
+      color: var(--text-medium);
+      line-height: 1.7;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: rgba(232, 196, 160, 0.9);
+      margin: 16px auto 0;
+      opacity: 0.7;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+      border: 1.5px solid transparent;
+      text-align: center;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--terracotta-btn); color: #fff; border-color: var(--terracotta-btn); }
+    .btn-primary:hover { background: var(--terracotta-hover); border-color: var(--terracotta-hover); }
+    .btn-outline { background: transparent; color: var(--text-dark); border-color: rgba(250, 237, 220, 0.5); }
+    .btn-outline:hover { background: rgba(250, 237, 220, 0.08); border-color: rgba(250, 237, 220, 0.8); }
+
+    /* NAVBAR (igual que Fundadora, pero sobre fondo oscuro) */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(24px, 5vw, 72px);
+      background: rgba(15, 7, 4, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(210, 183, 152, 0.35);
+      box-shadow: 0 1px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .navbar__logo { display: flex; align-items: center; }
+    .navbar__logo-white, .navbar__logo-black {
+      height: 36px; width: auto;
+      transition: opacity 0.45s ease;
+      position: absolute;
+    }
+    .navbar__logo-white { opacity: 1; }
+    .navbar__logo-black { opacity: 0; }
+    .navbar__logo::after { content: ''; display: block; height: 36px; width: 120px; }
+
+    .navbar__nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 48px);
+    }
+    .navbar__nav a:not(.btn) {
+      font-family: var(--font-body);
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(252, 244, 235, 0.86);
+      transition: color 0.2s ease;
+    }
+    .navbar__nav a:not(.btn):hover { color: rgba(248, 212, 176, 1); }
+
+    .navbar__hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px;
+      background: none; border: none;
+    }
+    .navbar__hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: rgba(252, 244, 235, 0.9);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .navbar__hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .navbar__hamburger.open span:nth-child(2) { opacity: 0; }
+    .navbar__hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .navbar__dropdown { position: relative; }
+    .navbar__dropdown-toggle {
+      display: flex; align-items: center; gap: 5px;
+      font-family: var(--font-body); font-size: 12px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(252, 244, 235, 0.86); background: none; border: none;
+      cursor: pointer; padding: 0;
+      transition: color 0.2s ease;
+    }
+    .navbar__dropdown-toggle:hover { color: rgba(248, 212, 176, 1); }
+    .navbar__dropdown-toggle svg { transition: transform 0.25s ease; flex-shrink: 0; }
+    .navbar__dropdown.open .navbar__dropdown-toggle svg { transform: rotate(180deg); }
+
+    .navbar__dropdown-menu {
+      position: absolute; top: calc(100% + 14px); left: 50%;
+      transform: translateX(-50%);
+      background: rgba(30, 20, 16, 0.98);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(250, 237, 220, 0.18);
+      border-radius: 10px; padding: 8px 0; min-width: 210px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+      list-style: none;
+      opacity: 0; visibility: hidden;
+      transform: translateX(-50%) translateY(-6px);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      z-index: 200;
+    }
+    .navbar__dropdown.open .navbar__dropdown-menu {
+      opacity: 1; visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .navbar__dropdown-menu li a {
+      display: block; padding: 10px 20px;
+      font-family: var(--font-body); font-size: 12px; font-weight: 500;
+      letter-spacing: 0.08em; color: rgba(252, 244, 235, 0.9) !important;
+      transition: background 0.15s, color 0.15s; white-space: nowrap;
+    }
+    .navbar__dropdown-menu li a:hover {
+      background: rgba(139, 58, 42, 0.35);
+      color: #FFF6EC !important;
+    }
+
+    .mobile-dropdown { border-bottom: 1px solid rgba(250, 237, 220, 0.18); }
+    .mobile-dropdown__toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; font-family: var(--font-body); font-size: 13px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(252, 244, 235, 0.92); background: none; border: none;
+      cursor: pointer; padding: 8px 0;
+    }
+    .mobile-dropdown__toggle svg { transition: transform 0.25s ease; }
+    .mobile-dropdown.open .mobile-dropdown__toggle svg { transform: rotate(180deg); }
+    .mobile-dropdown__menu { display: none; flex-direction: column; gap: 0; padding: 4px 0 12px 12px; list-style: none; }
+    .mobile-dropdown.open .mobile-dropdown__menu { display: flex; }
+    .mobile-dropdown__menu li a {
+      display: block; font-size: 12px; font-weight: 400; letter-spacing: 0.08em;
+      color: rgba(232, 196, 160, 0.85); padding: 7px 0;
+      transition: color 0.2s;
+    }
+    .mobile-dropdown__menu li a:hover { color: #FFF4E8; }
+
+    .navbar__mobile-menu {
+      display: none; position: fixed;
+      top: var(--nav-height); left: 0; right: 0;
+      background: rgba(12, 6, 3, 0.96);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      padding: 24px clamp(24px, 6vw, 48px) 32px;
+      border-bottom: 1px solid rgba(250, 237, 220, 0.24);
+      flex-direction: column; gap: 20px; z-index: 99;
+    }
+    .navbar__mobile-menu.open { display: flex; }
+    .navbar__mobile-menu a {
+      font-family: var(--font-body); font-size: 13px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(252, 244, 235, 0.92); padding: 8px 0;
+      border-bottom: 1px solid rgba(250, 237, 220, 0.2);
+    }
+
+    /* HERO OSCURO - CONSTITUCIÓN */
+    .hero-decretos {
+      position: relative;
+      min-height: 100svh;
+      padding-top: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top left, #3B2315 0%, #140904 40%, #050302 100%);
+      overflow: hidden;
+    }
+
+    .hero-decretos__glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(214, 167, 120, 0.14) 0%, transparent 55%),
+        radial-gradient(circle at 85% 80%, rgba(176, 120, 84, 0.35) 0%, transparent 65%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-decretos__border {
+      position: absolute;
+      inset: 12% 9%;
+      border-radius: 18px;
+      border: 1px solid rgba(246, 223, 196, 0.22);
+      box-shadow:
+        0 32px 120px rgba(0, 0, 0, 0.85),
+        0 0 0 1px rgba(0, 0, 0, 0.58);
+      pointer-events: none;
+    }
+
+    .hero-decretos__inner {
+      position: relative;
+      max-width: 860px;
+      padding: clamp(40px, 6vw, 72px) clamp(24px, 7vw, 80px);
+      text-align: center;
+      z-index: 1;
+    }
+
+    .hero-decretos__eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(246, 223, 196, 0.92);
+      margin-bottom: 16px;
+    }
+
+    .hero-decretos__title {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 6vw, 5rem);
+      font-weight: 300;
+      color: #FFF6EC;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero-decretos__subtitle {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+      color: rgba(246, 223, 196, 0.9);
+      margin-bottom: 26px;
+    }
+
+    .hero-decretos__tagline {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      font-weight: 300;
+      color: rgba(239, 215, 190, 0.85);
+      line-height: 1.9;
+      max-width: 540px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-decretos__meta {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(239, 215, 190, 0.65);
+      margin-top: 18px;
+    }
+
+    /* PREÁMBULO */
+    .section-preambulo {
+      background: #1A120E;
+      padding: var(--section-pad) clamp(24px, 8vw, 120px);
+      border-top: 1px solid rgba(250, 237, 220, 0.1);
+      border-bottom: 1px solid rgba(250, 237, 220, 0.06);
+    }
+
+    .section-preambulo__inner {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .section-preambulo__header {
+      text-align: center;
+      margin-bottom: clamp(40px, 5vw, 64px);
+    }
+
+    .preambulo-body {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      font-weight: 300;
+      color: var(--text-medium);
+      line-height: 1.9;
+    }
+
+    .preambulo-body p { margin-bottom: 18px; }
+    .preambulo-body p:last-child { margin-bottom: 0; }
+
+    .preambulo-body strong { color: #F6E4D3; font-weight: 500; }
+
+    .preambulo-quote {
+      margin: 32px 0 0;
+      padding-left: 22px;
+      border-left: 2px solid rgba(246, 223, 196, 0.7);
+    }
+
+    .preambulo-quote p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.1vw, 1.6rem);
+      color: #F6E4D3;
+      line-height: 1.6;
+    }
+
+    /* DECRETOS */
+    .section-decretos {
+      background: #120C08;
+      padding: var(--section-pad) clamp(24px, 8vw, 120px);
+    }
+
+    .section-decretos__inner { max-width: 980px; margin: 0 auto; }
+
+    .section-decretos__header {
+      text-align: center;
+      margin-bottom: clamp(40px, 5vw, 64px);
+    }
+
+    .decretos-grid {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(24px, 3.2vw, 32px);
+    }
+
+    .decreto-card {
+      position: relative;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, rgba(214, 167, 120, 0.08) 0%, rgba(14, 8, 5, 0.98) 55%);
+      border: 1px solid rgba(246, 223, 196, 0.16);
+      padding: clamp(24px, 3vw, 32px) clamp(22px, 3vw, 32px);
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.75);
+      display: grid;
+      grid-template-columns: minmax(80px, 120px) minmax(0, 1fr);
+      gap: clamp(18px, 3vw, 28px);
+    }
+
+    .decreto-card__label {
+      font-family: var(--font-body);
+      font-size: 10px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(246, 223, 196, 0.7);
+      margin-bottom: 10px;
+    }
+
+    .decreto-card__index {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 4.4vw, 3.3rem);
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #FDF1E4;
+    }
+
+    .decreto-card__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+      font-weight: 400;
+      color: #FDF1E4;
+      margin-bottom: 4px;
+    }
+
+    .decreto-card__subtitle {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(246, 223, 196, 0.72);
+      margin-bottom: 14px;
+    }
+
+    .decreto-card__body {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-medium);
+      line-height: 1.9;
+    }
+
+    .decreto-card__body p { margin-bottom: 14px; }
+    .decreto-card__body p:last-child { margin-bottom: 0; }
+
+    .decreto-card__body strong { color: #F6E4D3; font-weight: 500; }
+
+    .decreto-card__consejo {
+      margin-top: clamp(16px, 2.2vw, 20px);
+      padding-top: 16px;
+      border-top: 1px dashed rgba(246, 223, 196, 0.32);
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .decreto-card__consejo-label {
+      font-family: var(--font-body);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(246, 223, 196, 0.8);
+      margin-bottom: 6px;
+    }
+
+    .decreto-card__consejo-text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.98rem;
+      color: #F6E4D3;
+      line-height: 1.7;
+    }
+
+    /* CIERRE */
+    .section-cierre {
+      background: #140B07;
+      padding: var(--section-pad) clamp(24px, 8vw, 120px);
+      border-top: 1px solid rgba(246, 223, 196, 0.12);
+    }
+
+    .section-cierre__inner {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cierre-text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.1vw, 1.6rem);
+      color: #F6E4D3;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .cierre-body {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-medium);
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* FOOTER (idéntico a Fundadora) */
+    .footer {
+      background: #050302;
+      color: rgba(255,255,255,0.7);
+      padding: clamp(48px, 7vw, 80px) clamp(24px, 8vw, 120px) 0;
+      border-top: 1px solid rgba(250, 237, 220, 0.14);
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: clamp(32px, 5vw, 80px);
+      padding-bottom: clamp(40px, 5vw, 64px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer__logo-img { height: 48px; width: auto; margin-bottom: 16px; opacity: 0.92; }
+    .footer__desc { font-size: 0.85rem; line-height: 1.8; color: rgba(255,255,255,0.55); max-width: 280px; }
+    .footer__col-title {
+      font-family: var(--font-body); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); margin-bottom: 20px;
+    }
+    .footer__links { display: flex; flex-direction: column; gap: 12px; }
+    .footer__links a { font-size: 0.88rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .footer__links a:hover { color: #fff; }
+    .footer__bottom { padding: 20px 0; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-decretos__border { inset: 10% 5%; }
+      .hero-decretos__inner { padding-inline: clamp(20px, 7vw, 40px); }
+      .navbar__nav { display: none; }
+      .navbar__hamburger { display: flex; }
+      .decreto-card {
+        grid-template-columns: 1fr;
+        padding: 22px 18px 22px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .section-preambulo, .section-decretos, .section-cierre {
+        padding-inline: clamp(18px, 6vw, 28px);
+      }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+      .footer__grid > :first-child { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-decretos__border { inset: 12% 5%; }
+      .footer__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar" id="navbar" role="banner">
+    <a href="/" class="navbar__logo" aria-label="ALDEA inicio">
+      <img src="../logo_blanco_nobg.webp" alt="ALDEA" class="navbar__logo-white" />
+      <img src="../logo_negro_nobg.webp" alt="ALDEA" class="navbar__logo-black" />
+    </a>
+    <nav class="navbar__nav" aria-label="Navegación principal">
+      <a href="/#aldea">Aldea</a>
+
+      <div class="navbar__dropdown">
+        <button class="navbar__dropdown-toggle" aria-expanded="false">
+          Fundadora
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="navbar__dropdown-menu" role="menu">
+          <li><a href="/fundadora/index.html" role="menuitem">Conoce a la Fundadora</a></li>
+          <li><a href="/decretos-de-aldea/index.html" role="menuitem">Decretos de Aldea</a></li>
+          <li><a href="/comunidad-de-fundadoras/index.html" role="menuitem">Comunidad de Fundadoras</a></li>
+        </ul>
+      </div>
+
+      <div class="navbar__dropdown">
+        <button class="navbar__dropdown-toggle" aria-expanded="false">
+          Roles
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="navbar__dropdown-menu" role="menu">
+          <li><a href="/ciudadana/index.html" role="menuitem">Ciudadana</a></li>
+          <li><a href="/regidora/index.html" role="menuitem">Regidora</a></li>
+          <li><a href="/gobernadora/index.html" role="menuitem">Gobernadora</a></li>
+        </ul>
+      </div>
+
+      <a href="/#la-plaza">La Plaza</a>
+
+      <div class="navbar__dropdown">
+        <button class="navbar__dropdown-toggle" aria-expanded="false">
+          Miniserie
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="navbar__dropdown-menu" role="menu">
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener" role="menuitem">Episodio 1</a></li>
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener" role="menuitem">Episodio 2</a></li>
+        </ul>
+      </div>
+
+      <a href="/#programas" class="btn btn-primary">Entrar</a>
+    </nav>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="navbar__mobile-menu" id="mobile-menu" aria-label="Menú móvil">
+    <a href="/#aldea">Aldea</a>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown__toggle" aria-expanded="false">
+        Fundadora
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="mobile-dropdown__menu">
+        <li><a href="/fundadora/index.html">Conoce a la Fundadora</a></li>
+        <li><a href="/decretos-de-aldea/index.html">Decretos de Aldea</a></li>
+        <li><a href="/comunidad-de-fundadoras/index.html">Comunidad de Fundadoras</a></li>
+      </ul>
+    </div>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown__toggle" aria-expanded="false">
+        Roles
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="mobile-dropdown__menu">
+        <li><a href="/ciudadana/index.html">Ciudadana</a></li>
+        <li><a href="/regidora/index.html">Regidora</a></li>
+        <li><a href="/gobernadora/index.html">Gobernadora</a></li>
+      </ul>
+    </div>
+    <a href="/#la-plaza">La Plaza</a>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown__toggle" aria-expanded="false">
+        Miniserie
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="mobile-dropdown__menu">
+        <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener">Episodio 1</a></li>
+        <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener">Episodio 2</a></li>
+      </ul>
+    </div>
+    <a href="/#programas" class="btn btn-primary" style="text-align:center;margin-top:4px;">Entrar</a>
+  </nav>
+
+  <main>
+    <section class="hero-decretos" aria-label="Constitución de Aldea">
+      <div class="hero-decretos__glow" aria-hidden="true"></div>
+      <div class="hero-decretos__border" aria-hidden="true"></div>
+      <div class="hero-decretos__inner">
+        <p class="hero-decretos__eyebrow reveal">La Constitución de Aldea</p>
+        <h1 class="hero-decretos__title reveal reveal-delay-1">Los Decretos</h1>
+        <p class="hero-decretos__subtitle reveal reveal-delay-2">El Arte de Saber Estar hecho principios</p>
+        <p class="hero-decretos__tagline reveal reveal-delay-3">
+          No son reglas rígidas, son decisiones conscientes sobre cómo habitar el mundo, cómo relacionarte y cómo dejar huella.
+          Aquí viven los Decretos que sostienen la forma de convivir en Aldea.
+        </p>
+        <div class="reveal reveal-delay-4">
+          <a href="#decretos" class="btn btn-outline">Ver los Decretos</a>
+          <p class="hero-decretos__meta">Documento vivo · Versión 1.0</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-preambulo" aria-label="Preámbulo de la Constitución de Aldea">
+      <div class="section-preambulo__inner">
+        <div class="section-preambulo__header reveal">
+          <p class="label">Preámbulo</p>
+          <div class="divider"></div>
+        </div>
+        <div class="preambulo-body reveal reveal-delay-1">
+          <p>
+            Antes de hablarte de Aldea, quiero que hablemos del <strong>Pastorcito Mentiroso</strong>.
+            Esa fábula en la que un pastorcito se burlaba de los aldeanos gritando "¡Lobo, lobo!".
+            Al principio todos acudían en su ayuda, pero después de varias falsas alarmas, dejaron de creerle.
+          </p>
+          <p>
+            Cuando el lobo real apareció, nadie vino a ayudarlo.
+            La moraleja es tan sencilla como poderosa: <strong>en boca de un mentiroso, lo cierto se hace dudoso.</strong>
+          </p>
+          <p>
+            Traducido a la vida real: <strong>tu reputación es un tesoro</strong>.
+            Una vez se crea una mala imagen, es difícil cambiarla (aunque no imposible).
+            Cada gesto, cada palabra, cada silencio, va construyendo la forma en la que el mundo te percibe.
+          </p>
+          <p>
+            Ahí, justo ahí, entra <strong>El Arte de Saber Estar</strong>.
+            No solo como un conjunto de buenas costumbres, sino como una manera de relacionarte con intención,
+            de tener fluidez social, seguridad y memorabilidad.
+          </p>
+          <div class="preambulo-quote">
+            <p>
+              Estos Decretos nacen para recordarte que la elegancia no es superficial, que el saber estar no es apariencia,
+              y que tu forma de convivir puede convertirse en tu mayor ventaja.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-decretos" id="decretos" aria-label="Decretos de Aldea">
+      <div class="section-decretos__inner">
+        <div class="section-decretos__header reveal">
+          <p class="label">Los 5 Decretos</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="decretos-grid">
+          <article class="decreto-card reveal" aria-label="Decreto I - Ser educada">
+            <div>
+              <p class="decreto-card__label">Decreto</p>
+              <p class="decreto-card__index">I</p>
+            </div>
+            <div>
+              <h2 class="decreto-card__title">Ser educada</h2>
+              <p class="decreto-card__subtitle">La forma en la que haces sentir al otro</p>
+              <div class="decreto-card__body">
+                <p>
+                  En Aldea, la educación no es repetir "gracias" como un robot entrenado.
+                  <strong>Ser educada es hacer sentir al otro importante.</strong>
+                  Es elegir no actuar por impulso, sino darte un segundo para pensar cómo responder.
+                </p>
+                <p>
+                  La verdadera educación se revela en los momentos incómodos: cuando alguien llega tarde,
+                  se equivoca o dice algo imprudente.
+                  <strong>Lo que haces con ese instante define tu saber estar.</strong>
+                </p>
+                <p>
+                  Proteger a la otra persona es uno de los actos más hermosos de elegancia.
+                  No se trata de burlarse, ni de exponer; se trata de usar tu discreción como escudo.
+                </p>
+              </div>
+              <div class="decreto-card__consejo">
+                <p class="decreto-card__consejo-label">Consejo del Decreto I</p>
+                <p class="decreto-card__consejo-text">
+                  Cuando alguien se equivoca delante de ti, pregúntate:
+                  "¿Cómo puedo cuidar su dignidad en este momento?".
+                  Esa respuesta es tu verdadera educación.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="decreto-card reveal" aria-label="Decreto II - Ser asertiva">
+            <div>
+              <p class="decreto-card__label">Decreto</p>
+              <p class="decreto-card__index">II</p>
+            </div>
+            <div>
+              <h2 class="decreto-card__title">Ser asertiva</h2>
+              <p class="decreto-card__subtitle">La elegancia hecha comunicación</p>
+              <div class="decreto-card__body">
+                <p>
+                  La asertividad es la base de la elegancia en la convivencia.
+                  <strong>Ser asertiva es acertar en tu mensaje, en tu tono y en tu comportamiento.</strong>
+                </p>
+                <p>
+                  En Aldea tenemos algo claro: ser amable no es ser débil, y ser clara no es ser grosera.
+                  La fuerza está en decir lo que piensas sin perder el tacto.
+                </p>
+                <p>
+                  La fórmula secreta de la asertividad combina suavidad en el tono con firmeza en el mensaje.
+                  Eso es poder, presencia y saber estar.
+                </p>
+              </div>
+              <div class="decreto-card__consejo">
+                <p class="decreto-card__consejo-label">Consejo del Decreto II</p>
+                <p class="decreto-card__consejo-text">
+                  Cambia el "No puedo" seco por
+                  "Hoy no me es posible, pero gracias por pensar en mí".
+                  El contenido es el mismo; la diferencia está en tu elegancia.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="decreto-card reveal" aria-label="Decreto III - Ser empática">
+            <div>
+              <p class="decreto-card__label">Decreto</p>
+              <p class="decreto-card__index">III</p>
+            </div>
+            <div>
+              <h2 class="decreto-card__title">Ser empática</h2>
+              <p class="decreto-card__subtitle">Leer el escenario antes de entrar</p>
+              <div class="decreto-card__body">
+                <p>
+                  Este Decreto habla de tu capacidad de leer la escena antes de actuar.
+                  La empatía en Aldea va mucho más allá de "ponerse en el lugar del otro".
+                </p>
+                <p>
+                  <strong>Una persona empática escucha para comprender y luego decide cómo aparecer.</strong>
+                  Observa miradas, silencios, cambios de energía.
+                  Lo que no se dice, también comunica.
+                </p>
+                <p>
+                  La empatía requiere distancia interna: mirar la situación desde afuera, de forma desinteresada,
+                  para actuar con criterio y humanidad.
+                </p>
+              </div>
+              <div class="decreto-card__consejo">
+                <p class="decreto-card__consejo-label">Consejo del Decreto III</p>
+                <p class="decreto-card__consejo-text">
+                  Antes de reaccionar, haz una pausa de tres segundos y pregúntate:
+                  "¿Qué está pasando realmente aquí, más allá de las palabras?".
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="decreto-card reveal" aria-label="Decreto IV - Ser prudente">
+            <div>
+              <p class="decreto-card__label">Decreto</p>
+              <p class="decreto-card__index">IV</p>
+            </div>
+            <div>
+              <h2 class="decreto-card__title">Ser prudente</h2>
+              <p class="decreto-card__subtitle">El arte de no decirlo todo</p>
+              <div class="decreto-card__body">
+                <p>
+                  La prudencia es el arte de no contarlo todo, no mostrarlo todo, no opinar de todo.
+                  En una época donde todos tienen algo que decir, <strong>la discreción es casi revolucionaria.</strong>
+                </p>
+                <p>
+                  Los discretos son pocos, y eso los convierte en oro puro.
+                  La prudencia no te apaga; te posiciona.
+                  Es ese filtro invisible que deja a los demás con la sensación de:
+                  "hay algo en ella... no sé qué es, pero me encanta".
+                </p>
+                <p>
+                  A eso, en Aldea, le llamamos <strong>magnetismo</strong>.
+                </p>
+              </div>
+              <div class="decreto-card__consejo">
+                <p class="decreto-card__consejo-label">Consejo del Decreto IV</p>
+                <p class="decreto-card__consejo-text">
+                  No todo pensamiento merece convertirse en palabra.
+                  Pregúntate: "¿Aporta? ¿Suma? ¿Es el momento?".
+                  Si la respuesta es no, tu silencio también es elegancia.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="decreto-card reveal" aria-label="Decreto V - Ser respetuosa">
+            <div>
+              <p class="decreto-card__label">Decreto</p>
+              <p class="decreto-card__index">V</p>
+            </div>
+            <div>
+              <h2 class="decreto-card__title">Ser respetuosa</h2>
+              <p class="decreto-card__subtitle">El lenguaje universal de las memorables</p>
+              <div class="decreto-card__body">
+                <p>
+                  El respeto es el lenguaje universal de las personas memorables.
+                  <strong>No depende de jerarquías, ni de títulos, ni de dinero.</strong>
+                </p>
+                <p>
+                  Cómo tratas a quien no puede ofrecerte nada, define tu nivel real de educación.
+                  En Aldea, el respeto por todo y por todos es un must, no una opción selectiva.
+                </p>
+                <p>
+                  El saber estar convierte el respeto en hábito, no en un gesto que depende de con quién estás hablando.
+                </p>
+              </div>
+              <div class="decreto-card__consejo">
+                <p class="decreto-card__consejo-label">Consejo del Decreto V</p>
+                <p class="decreto-card__consejo-text">
+                  Observa cómo hablas con quien te sirve el café, con quien abre la puerta,
+                  con quien no "importa".
+                  Ahí se ve de qué estás hecha.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-cierre" aria-label="Cierre de los Decretos de Aldea">
+      <div class="section-cierre__inner">
+        <p class="label reveal">Más que etiqueta</p>
+        <div class="divider"></div>
+        <div class="cierre-text reveal reveal-delay-1">
+          "Después de ser madre y atravesar momentos de salud delicados,
+          entendí que el verdadero valor del saber estar no está en los cubiertos,
+          sino en <span style="color:#FBE1BF;">cómo haces sentir a las personas cuando están contigo... y cuando se van</span>."
+        </div>
+        <div class="cierre-body reveal reveal-delay-2">
+          <p>
+            Por eso, en Aldea, la etiqueta dejó de ser un fin y se convirtió en un medio.
+            Un medio para construir presencia, fluidez social, coherencia y humanidad.
+          </p>
+          <p>
+            Estos Decretos no buscan controlarte, buscan acompañarte mientras te conviertes en la mujer que deja huella
+            sin esfuerzo aparente.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <a href="/#programas" class="btn btn-outline">Quiero habitar Aldea</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__grid">
+      <div>
+        <img src="../logo_blanco_nobg.webp" alt="ALDEA" class="footer__logo-img" />
+        <p class="footer__desc">El Arte de Saber Estar. Un espacio donde cada mujer encuentra su lugar y transforma su presencia en el mundo.</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Navegar</p>
+        <ul class="footer__links">
+          <li><a href="/#aldea">Aldea</a></li>
+          <li><a href="/fundadora/index.html">Conoce a la Fundadora</a></li>
+          <li><a href="/decretos-de-aldea/index.html">Decretos de Aldea</a></li>
+          <li><a href="/comunidad-de-fundadoras/index.html">Comunidad de Fundadoras</a></li>
+          <li><a href="/#programas">Roles</a></li>
+          <li><a href="/#la-plaza">La Plaza</a></li>
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener">Miniserie — Ep. 1</a></li>
+          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener">Miniserie — Ep. 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Contacto</p>
+        <ul class="footer__links">
+          <li><a href="mailto:hola@aldealaetiquette.com">hola@aldealaetiquette.com</a></li>
+          <li><a href="https://www.instagram.com/laetiquette/" target="_blank" rel="noopener">@laetiquette</a></li>
+          <li><a href="https://api.whatsapp.com/send?phone=+573054068714&text=%C2%A1Hola!%20Requiero%20m%C3%A1s%20informaci%C3%B3n%20acceder%20a%20*ALDEA*" target="_blank" rel="noopener">+57 305 4068714</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 ALDEA. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.navbar__dropdown').forEach(dropdown => {
+      const toggle = dropdown.querySelector('.navbar__dropdown-toggle');
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        document.querySelectorAll('.navbar__dropdown').forEach(other => {
+          if (other !== dropdown) {
+            other.classList.remove('open');
+            other.querySelector('.navbar__dropdown-toggle').setAttribute('aria-expanded', false);
+          }
+        });
+      });
+    });
+
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.navbar__dropdown.open').forEach(d => {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle').setAttribute('aria-expanded', false);
+      });
+    });
+
+    document.querySelectorAll('.mobile-dropdown__toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const parent = toggle.closest('.mobile-dropdown');
+        const isOpen = parent.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
