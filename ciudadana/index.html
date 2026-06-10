@@ -1,1 +1,777 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ciudadana · Membresía ALDEA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ciudadana: la membresía mensual de ALDEA para entrenar tu presencia y tu fluidez social a través de contenidos exclusivos en Instagram." />
 
+  <!-- OG básico -->
+  <meta property="og:title" content="Ciudadana · Membresía ALDEA" />
+  <meta property="og:description" content="Una membresía mensual en Instagram para mujeres que quieren moverse con calma, criterio y autoridad silenciosa en cualquier escenario social." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tipografías similares a la web actual de ALDEA -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #FAF7F2;
+      --bg-alt: #F5F0E8;
+      --bg-soft: #FBF9F5;
+      --text-main: #2B2118;
+      --text-muted: #7A6E63;
+      --accent: #8B3A2A;
+      --accent-soft: rgba(139, 58, 42, 0.08);
+      --border-soft: #E1D5C8;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 24px;
+
+      --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-main);
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 100% - 3rem);
+      margin: 0 auto;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(250, 247, 242, 0.94);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+    }
+
+    .navbar-brand span:nth-child(2) {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .navbar-link {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Botones */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #FFF;
+      box-shadow: 0 14px 28px rgba(139, 58, 42, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 34px rgba(139, 58, 42, 0.32);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--accent-soft);
+    }
+
+    /* Tipografía */
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      margin: 0 0 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 3.1vw, 2.8rem);
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 2.5vw, 2.1rem);
+      line-height: 1.25;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 0.98rem;
+      margin: 0 0 0.9rem;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-lead {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+      margin-bottom: 1.7rem;
+    }
+
+    /* Secciones */
+    section {
+      padding: clamp(3rem, 6vw, 4.2rem) 0;
+    }
+
+    .section-alt {
+      background-color: var(--bg-alt);
+    }
+
+    .section-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: clamp(3.2rem, 7vw, 4.6rem);
+      padding-bottom: clamp(2.6rem, 5vw, 3.4rem);
+      background: radial-gradient(circle at top left, rgba(139, 58, 42, 0.1), transparent 60%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: clamp(2.2rem, 4vw, 3rem);
+      align-items: stretch;
+      min-height: 420px;
+    }
+
+    .hero-lead {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      margin-bottom: 1.3rem;
+      max-width: 32rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 26rem;
+    }
+
+    /* Panel de imagen hero */
+    .hero-image-panel {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background-image: url("mockups.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Listas y layouts */
+    .bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bullet-list li {
+      display: flex;
+      gap: 0.65rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .bullet-dot {
+      margin-top: 0.45rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background-color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: step;
+    }
+
+    .steps-list li {
+      counter-increment: step;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .steps-list li::before {
+      content: counter(step);
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-top: 0.1rem;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: clamp(1.8rem, 3vw, 2.6rem);
+      align-items: flex-start;
+    }
+
+    .highlight-box {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      padding: 1.3rem 1.25rem 1.1rem;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .highlight-box p {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* Vista previa de contenidos (collage) */
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin-top: 1.8rem;
+    }
+
+    .preview-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .preview-media img {
+      width: 100%;
+      display: block;
+    }
+
+    .preview-media-ui {
+      position: relative;
+    }
+
+    .preview-badge {
+      position: absolute;
+      bottom: 0.7rem;
+      right: 0.7rem;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.7rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #FFF;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .preview-copy {
+      padding: 0.85rem 0.9rem 1rem;
+    }
+
+    .preview-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #A1907A;
+      margin-bottom: 0.35rem;
+    }
+
+    .preview-text {
+      font-size: 0.86rem;
+      color: #3B3026;
+      margin: 0;
+    }
+
+    .preview-note {
+      margin-top: 1.7rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    /* Precio y garantía */
+    .value-stack {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: clamp(1.8rem, 3vw, 2.5rem);
+      align-items: flex-start;
+    }
+
+    .price-tag {
+      font-size: 2rem;
+      font-family: "Cormorant Garamond", serif;
+      margin: 0.4rem 0 0.5rem;
+    }
+
+    .price-tag span {
+      font-size: 1rem;
+      font-family: "Montserrat", sans-serif;
+      color: var(--text-muted);
+    }
+
+    .value-note {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .guarantee {
+      border-radius: var(--radius-md);
+      border: 1px dashed rgba(139, 58, 42, 0.4);
+      background: rgba(139, 58, 42, 0.03);
+      padding: 1.35rem 1.3rem 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    /* CTA final */
+    .cta-final {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-final p {
+      font-size: 0.95rem;
+    }
+
+    .signature {
+      margin-top: 1.8rem;
+      font-size: 0.9rem;
+    }
+
+    .signature-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.15rem;
+    }
+
+    .postdata {
+      margin-top: 1.4rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .postdata p {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.8rem 0 2rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background-color: var(--bg-soft);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .two-column,
+      .value-stack {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-grid {
+        gap: 2rem;
+        min-height: auto;
+      }
+
+      .hero-image-panel {
+        order: -1;       /* imagen arriba en mobile */
+        height: 260px;
+      }
+
+      .preview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .navbar-inner {
+        padding: 0.65rem 0;
+      }
+
+      .hero {
+        padding-top: 2.6rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .preview-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar" role="banner">
+    <div class="container navbar-inner">
+      <a href="/index.html" class="navbar-brand" aria-label="Volver a la página principal de ALDEA">
+        <span>ALDEA</span>
+        <span>CIUDADANA</span>
+      </a>
+      <a href="/index.html#programas" class="navbar-link">Ver otros caminos</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Membresía mensual · Ciudadana</p>
+          <h1 id="hero-title">Tu entrenamiento continuo para El Arte de Saber Estar</h1>
+          <p class="hero-lead">
+            Ciudadana es la membresía de ALDEA para mujeres que quieren moverse con calma, criterio
+            y autoridad silenciosa en cualquier escenario social, desde la cotidianidad hasta los momentos clave.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="https://instagram.com/laetiquette" class="btn btn-primary">
+              Suscribirme en Instagram — $4.50 USD/mes
+            </a>
+          </div>
+
+          <p class="hero-note">
+            Todo vive en <strong>Instagram</strong>. Abres la app y encuentras contenidos exclusivos,
+            miniseries y referencias solo para quienes son Ciudadanas. Cancelas cuando quieras desde la app.
+          </p>
+        </div>
+
+        <!-- Panel de imagen a la derecha -->
+        <div class="hero-image-panel" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- PARA QUIÉN ES -->
+    <section id="para-quien" class="section-alt" aria-labelledby="para-quien-title">
+      <div class="container section-inner">
+        <h2 id="para-quien-title">¿Es para ti Ciudadana?</h2>
+        <p class="section-lead">
+          Ciudadana es el punto de entrada al universo de ALDEA. Un lugar para entrenar, paso a paso, tu criterio social.
+        </p>
+        <ul class="bullet-list">
+          <li>
+            <span class="bullet-dot"></span>
+            <span>Sientes que en ciertos escenarios tu presencia se hace más pequeña de lo que realmente eres.</span>
+          </li>
+          <li>
+            <span class="bullet-dot"></span>
+            <span>Te cansa gastar energía en «no meter la pata» en lugar de disfrutar la conversación.</span>
+          </li>
+          <li>
+            <span class="bullet-dot"></span>
+            <span>Te importa la estética, las formas y el fondo de tus relaciones, y quieres que todo eso se note.</span>
+          </li>
+          <li>
+            <span class="bullet-dot"></span>
+            <span>Quieres un espacio íntimo y constante para entrenar El Arte de Saber Estar, sin que te robe horas ni te exija otra plataforma.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- QUÉ ES CIUDADANA -->
+    <section id="que-es" aria-labelledby="que-es-title">
+      <div class="container two-column">
+        <div>
+          <h2 id="que-es-title">Qué es Ciudadana dentro de ALDEA</h2>
+          <p>
+            Ciudadana no es un curso que haces una vez y archivas. Es una membresía viva donde cada pieza
+            entrena tu forma de estar: cómo saludas, cómo sostienes una conversación, cómo ocupas tu lugar
+            en la mesa, en la sala y en la vida.
+          </p>
+          <p>
+            El objetivo es uno: que El Arte de Saber Estar deje de sentirse como un examen sorpresa
+            y se convierta en algo que te sale con total naturalidad.
+          </p>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <p>
+              No se trata de ser «más correcta». Se trata de comunicar con precisión quién eres,
+              antes incluso de abrir la boca.
+            </p>
+            <p>
+              La etiqueta, bien entendida, no es rigidez: es comunicación. Y Ciudadana es el espacio
+              donde empiezas a hacerla tuya.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISTA PREVIA DE CONTENIDOS / COLLAGE -->
+    <section id="preview" class="section-alt" aria-labelledby="preview-title">
+      <div class="container section-inner">
+        <h2 id="preview-title">Así se ve Ciudadana por dentro</h2>
+        <p class="section-lead">
+          Contenidos editoriales, miniseries y conversaciones privadas dentro de Instagram.
+          Una casa digital donde entrenas tu presencia en la práctica.
+        </p>
+
+       
+        <p class="preview-note">
+          Todo vive en <strong>Instagram</strong>. No necesitas recordar otra contraseña ni entrar a otra plataforma:
+          abres la app y tu entrenamiento social está ahí esperándote.
+        </p>
+      </div>
+    </section>
+
+    <!-- QUÉ INCLUYE + PRECIO -->
+    <section id="incluye" aria-labelledby="incluye-title">
+      <div class="container value-stack">
+        <div>
+          <h2 id="incluye-title">Lo que recibes como Ciudadana</h2>
+          <ul class="bullet-list">
+            <li>
+              <span class="bullet-dot"></span>
+              <span>Contenido exclusivo semanal sobre presencia, protocolo contemporáneo y comunicación no verbal.</span>
+            </li>
+            <li>
+              <span class="bullet-dot"></span>
+              <span>Miniseries y masterclasses con María Paula y expertas invitadas, enfocadas en escenarios concretos.</span>
+            </li>
+            <li>
+              <span class="bullet-dot"></span>
+              <span>Comunidad privada de Ciudadanas para practicar, preguntar y compartir casos reales.</span>
+            </li>
+            <li>
+              <span class="bullet-dot"></span>
+              <span>Guías, ejemplos y referencias visuales que puedes guardar y revisar antes de tus próximos eventos.</span>
+            </li>
+            <li>
+              <span class="bullet-dot"></span>
+              <span>Acceso prioritario y beneficios especiales en otros programas del ecosistema ALDEA.</span>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="highlight-box" aria-label="Precio y condiciones de la membresía Ciudadana">
+          <p class="eyebrow">Inversión mensual</p>
+          <p class="price-tag">
+            $4.50 USD <span>/ mes</span>
+          </p>
+          <p class="value-note">
+            Vale menos que un café y lo que entrenas aquí se queda contigo para siempre.
+          </p>
+
+          <a href="https://instagram.com/laetiquette" class="btn btn-primary" style="margin-top:1.1rem; width:100%;">
+            Suscribirme en Instagram — $4.50 USD/mes
+          </a>
+
+          <p class="value-note" style="margin-top:0.8rem;">
+            Gestionas tu suscripción directamente desde la app de Instagram. Sin formularios. Sin correos. Sin trámites.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA + GARANTÍA -->
+    <section id="funciona" class="section-alt" aria-labelledby="funciona-title">
+      <div class="container two-column">
+        <div>
+          <h2 id="funciona-title">Cómo funciona Ciudadana</h2>
+          <ol class="steps-list">
+            <li>
+              <span><strong>Te suscribes</strong> desde el perfil de @laetiquette en Instagram y activas la membresía Ciudadana.</span>
+            </li>
+            <li>
+              <span><strong>Empiezas a recibir</strong> contenido exclusivo en tu feed y acceso a las miniseries y recursos para Ciudadanas.</span>
+            </li>
+            <li>
+              <span><strong>Llevas todo a la práctica</strong> en tus próximas salidas, reuniones y escenarios sociales del día a día.</span>
+            </li>
+            <li>
+              <span><strong>Decides con calma</strong>: si en cualquier momento sientes que ya no es para ti, cancelas desde la app.</span>
+            </li>
+          </ol>
+        </div>
+        <div>
+          <div class="guarantee">
+            <p>
+              Entra, observa, practica. Si en 30 días no sientes que tu presencia gana un poco más de calma y claridad,
+              puedes cancelar directamente desde Instagram.
+            </p>
+            <p>
+              Sin llamadas. Sin explicaciones. Sin letras pequeñas.
+            </p>
+            <p>
+              La intención no es que colecciones membresías, sino que eleves, de verdad, el estándar de cómo te presentas en el mundo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="cta-final" aria-labelledby="cta-final-title">
+      <div class="container cta-final">
+        <h2 id="cta-final-title">La fluidez social se entrena</h2>
+        <p>
+          Ciudadana es el primer paso dentro de ALDEA. Un espacio íntimo para entrenar,
+          poco a poco, el músculo de tu presencia en la vida real.
+        </p>
+        <p>
+          Si sientes que es tu momento de dejar de adivinar y empezar a habitar tus espacios con más certeza,
+          estás a un clic de entrar.
+        </p>
+
+        <a href="https://instagram.com/laetiquette" class="btn btn-primary">
+          Suscribirme en Instagram — $4.50 USD/mes
+        </a>
+
+        <div class="signature">
+          <p class="signature-name">María Paula Camacho</p>
+          <p>Fundadora de ALDEA · El Arte de Saber Estar</p>
+        </div>
+
+        <div class="postdata">
+          <p>
+            P.D. La elegancia no es un don reservado para unas pocas. Es una habilidad que se cultiva con la
+            información correcta y la práctica constante.
+          </p>
+          <p>
+            P.P.D. Muchas de las mujeres que luego escalan a otros caminos dentro de ALDEA empezaron aquí,
+            en Ciudadana. El primer paso siempre es el más revelador.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> ALDEA · El Arte de Saber Estar</span>
+      <div class="footer-links">
+        <a href="/aviso-de-privacidad.html">Aviso de privacidad</a>
+        <a href="/terminos-y-condiciones.html">Términos y condiciones</a>
+        <a href="https://instagram.com/laetiquette" target="_blank" rel="noopener noreferrer">@laetiquette</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
