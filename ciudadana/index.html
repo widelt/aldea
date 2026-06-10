@@ -381,6 +381,21 @@
       color: var(--text-muted);
     }
 
+
+	.preview-video-wrapper {
+		margin: 1.8rem auto 1.6rem;
+		max-width: 640px;          /* ajusta según tu diseño */
+		border-radius: 18px;
+		overflow: hidden;
+		box-shadow: var(--shadow-soft);
+	}
+
+	.preview-video {
+	display: block;
+	width: 100%;
+  height: auto;
+}
+
     /* Precio y garantía */
     .value-stack {
       display: grid;
@@ -619,22 +634,36 @@
       </div>
     </section>
 
-    <!-- VISTA PREVIA DE CONTENIDOS / COLLAGE -->
-    <section id="preview" class="section-alt" aria-labelledby="preview-title">
-      <div class="container section-inner">
-        <h2 id="preview-title">Así se ve Ciudadana por dentro</h2>
-        <p class="section-lead">
-          Contenidos editoriales, miniseries y conversaciones privadas dentro de Instagram.
-          Una casa digital donde entrenas tu presencia en la práctica.
-        </p>
+    <!-- VISTA PREVIA DE CONTENIDOS -->
+<section id="preview" class="section-alt" aria-labelledby="preview-title">
+  <div class="container section-inner">
+    <h2 id="preview-title">Así se ve Ciudadana por dentro</h2>
 
-       
-        <p class="preview-note">
-          Todo vive en <strong>Instagram</strong>. No necesitas recordar otra contraseña ni entrar a otra plataforma:
-          abres la app y tu entrenamiento social está ahí esperándote.
-        </p>
-      </div>
-    </section>
+    <p class="section-lead">
+      Contenidos editoriales, miniseries y conversaciones privadas
+      dentro de Instagram. Una casa digital donde entrenas tu
+      presencia en la práctica.
+    </p>
+
+    <!-- VIDEO CENTRADO ENTRE LOS DOS PÁRRAFOS -->
+    <div class="preview-video-wrapper">
+      <video
+        src="suscripciponig.webm"
+        autoplay
+        loop
+        muted
+        playsinline
+        class="preview-video"
+      ></video>
+    </div>
+
+    <p class="preview-note">
+      Todo vive en <strong>Instagram</strong>. No necesitas recordar otra contraseña
+      ni entrar a otra plataforma: abres la app y tu entrenamiento social
+      está ahí esperándote.
+    </p>
+  </div>
+</section>
 
     <!-- QUÉ INCLUYE + PRECIO -->
     <section id="incluye" aria-labelledby="incluye-title">
