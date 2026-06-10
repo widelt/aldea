@@ -227,18 +227,35 @@
       box-shadow: 0 1px 16px rgba(100, 70, 40, 0.07);
     }
 
-    /* Logo — blanco en hero, oscuro al scrollear */
+    /* Logo — contenedor */
     .navbar__logo {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      color: #fff;
-      transition: color 0.45s ease;
+      display: flex;
+      align-items: center;
     }
 
-    .navbar.scrolled .navbar__logo {
-      color: var(--text-dark);
+    /* Ambas versiones del logo */
+    .navbar__logo-white,
+    .navbar__logo-black {
+      height: 36px;
+      width: auto;
+      transition: opacity 0.45s ease;
+      position: absolute;
+    }
+
+    /* Estado inicial: logo blanco visible, negro oculto */
+    .navbar__logo-white { opacity: 1; }
+    .navbar__logo-black { opacity: 0; }
+
+    /* Al scrollear: logo negro visible, blanco oculto */
+    .navbar.scrolled .navbar__logo-white { opacity: 0; }
+    .navbar.scrolled .navbar__logo-black { opacity: 1; }
+
+    /* Espaciado para que el logo ocupe su lugar en el flex */
+    .navbar__logo::after {
+      content: '';
+      display: block;
+      height: 36px;
+      width: 120px; /* ajusta si tu logo es más ancho o estrecho */
     }
 
     .navbar__nav {
@@ -822,7 +839,7 @@
     }
 
     .footer__logo-img {
-      height: 28px;
+      height: 48px;
       width: auto;
       margin-bottom: 16px;
       opacity: 0.92;
@@ -998,7 +1015,10 @@
        NAVBAR
   ============================================================ -->
   <header class="navbar" id="navbar" role="banner">
-    <a href="#" class="navbar__logo" aria-label="ALDEA inicio">ALDEA</a>
+    <a href="#" class="navbar__logo" aria-label="ALDEA inicio">
+      <img src="logo_blanco_nobg.webp" alt="ALDEA" class="navbar__logo-white" />
+      <img src="logo_negro_nobg.webp" alt="ALDEA" class="navbar__logo-black" />
+    </a>
     <nav class="navbar__nav" aria-label="Navegación principal">
       <a href="#aldea">Aldea</a>
       <a href="#programas">Programas</a>
