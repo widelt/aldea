@@ -123,7 +123,7 @@
     .btn-outline { background: transparent; color: var(--text-dark); border-color: rgba(250, 237, 220, 0.5); }
     .btn-outline:hover { background: rgba(250, 237, 220, 0.08); border-color: rgba(250, 237, 220, 0.8); }
 
-    /* NAVBAR (igual que Fundadora, pero sobre fondo oscuro) */
+    /* NAVBAR (Corregida con posición relativa de anclaje) */
     .navbar {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -140,15 +140,22 @@
       box-shadow: 0 1px 18px rgba(0, 0, 0, 0.55);
     }
 
-    .navbar__logo { display: flex; align-items: center; }
+    .navbar__logo {
+      display: flex;
+      align-items: center;
+      position: relative; /* Asegura el correcto anclaje de las imágenes absolutas */
+      height: 36px;
+      width: 120px;
+    }
     .navbar__logo-white, .navbar__logo-black {
       height: 36px; width: auto;
       transition: opacity 0.45s ease;
       position: absolute;
+      left: 0;
+      top: 0;
     }
     .navbar__logo-white { opacity: 1; }
     .navbar__logo-black { opacity: 0; }
-    .navbar__logo::after { content: ''; display: block; height: 36px; width: 120px; }
 
     .navbar__nav {
       display: flex;
@@ -591,6 +598,9 @@
 </head>
 <body>
 
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
   <header class="navbar" id="navbar" role="banner">
     <a href="/" class="navbar__logo" aria-label="ALDEA inicio">
       <img src="../logo_blanco_nobg.webp" alt="ALDEA" class="navbar__logo-white" />
@@ -599,6 +609,7 @@
     <nav class="navbar__nav" aria-label="Navegación principal">
       <a href="/#aldea">Aldea</a>
 
+      <!-- FUNDADORA -->
       <div class="navbar__dropdown">
         <button class="navbar__dropdown-toggle" aria-expanded="false">
           Fundadora
@@ -607,13 +618,13 @@
         <ul class="navbar__dropdown-menu" role="menu">
           <li><a href="/fundadora/index.html" role="menuitem">Conoce a la Fundadora</a></li>
           <li><a href="/decretos-de-aldea/index.html" role="menuitem">Decretos de Aldea</a></li>
-          <li><a href="/comunidad-de-fundadoras/index.html" role="menuitem">Comunidad de Fundadoras</a></li>
         </ul>
       </div>
 
+      <!-- CASAS -->
       <div class="navbar__dropdown">
         <button class="navbar__dropdown-toggle" aria-expanded="false">
-          Roles
+          Casas
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <ul class="navbar__dropdown-menu" role="menu">
@@ -625,16 +636,8 @@
 
       <a href="/#la-plaza">La Plaza</a>
 
-      <div class="navbar__dropdown">
-        <button class="navbar__dropdown-toggle" aria-expanded="false">
-          Miniserie
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <ul class="navbar__dropdown-menu" role="menu">
-          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener" role="menuitem">Episodio 1</a></li>
-          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener" role="menuitem">Episodio 2</a></li>
-        </ul>
-      </div>
+      <!-- EL ORIGEN -->
+      <a href="https://estreno.campuslaetiquette.com/replay/" target="_blank" rel="noopener">El Origen</a>
 
       <a href="/#programas" class="btn btn-primary">Entrar</a>
     </nav>
@@ -643,8 +646,11 @@
     </button>
   </header>
 
+  <!-- Mobile menu -->
   <nav class="navbar__mobile-menu" id="mobile-menu" aria-label="Menú móvil">
     <a href="/#aldea">Aldea</a>
+    
+    <!-- FUNDADORA mobile -->
     <div class="mobile-dropdown">
       <button class="mobile-dropdown__toggle" aria-expanded="false">
         Fundadora
@@ -653,12 +659,13 @@
       <ul class="mobile-dropdown__menu">
         <li><a href="/fundadora/index.html">Conoce a la Fundadora</a></li>
         <li><a href="/decretos-de-aldea/index.html">Decretos de Aldea</a></li>
-        <li><a href="/comunidad-de-fundadoras/index.html">Comunidad de Fundadoras</a></li>
       </ul>
     </div>
+
+    <!-- CASAS mobile -->
     <div class="mobile-dropdown">
       <button class="mobile-dropdown__toggle" aria-expanded="false">
-        Roles
+        Casas
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <ul class="mobile-dropdown__menu">
@@ -667,17 +674,12 @@
         <li><a href="/gobernadora/index.html">Gobernadora</a></li>
       </ul>
     </div>
+
     <a href="/#la-plaza">La Plaza</a>
-    <div class="mobile-dropdown">
-      <button class="mobile-dropdown__toggle" aria-expanded="false">
-        Miniserie
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <ul class="mobile-dropdown__menu">
-        <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener">Episodio 1</a></li>
-        <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener">Episodio 2</a></li>
-      </ul>
-    </div>
+
+    <!-- EL ORIGEN mobile -->
+    <a href="https://estreno.campuslaetiquette.com/replay/" target="_blank" rel="noopener">El Origen</a>
+
     <a href="/#programas" class="btn btn-primary" style="text-align:center;margin-top:4px;">Entrar</a>
   </nav>
 
@@ -695,7 +697,7 @@
         </p>
         <div class="reveal reveal-delay-4">
           <a href="#decretos" class="btn btn-outline">Ver los Decretos</a>
-          <p class="hero-decretos__meta">Documento vivo · Versión 1.0</p>
+          <p class="hero-decretos__meta">Versión 1.1</p>
         </div>
       </div>
     </section>
@@ -736,6 +738,7 @@
       </div>
     </section>
 
+    <!-- SECCIÓN DE DECRETOS CON CONTENIDO ACTUALIZADO -->
     <section class="section-decretos" id="decretos" aria-label="Decretos de Aldea">
       <div class="section-decretos__inner">
         <div class="section-decretos__header reveal">
@@ -744,168 +747,147 @@
         </div>
 
         <div class="decretos-grid">
-          <article class="decreto-card reveal" aria-label="Decreto I - Ser educada">
+          
+          <!-- DECRETO I -->
+          <article class="decreto-card reveal" aria-label="Decreto I - La consideración siempre será más importante que la corrección">
             <div>
               <p class="decreto-card__label">Decreto</p>
               <p class="decreto-card__index">I</p>
             </div>
             <div>
-              <h2 class="decreto-card__title">Ser educada</h2>
-              <p class="decreto-card__subtitle">La forma en la que haces sentir al otro</p>
+              <h2 class="decreto-card__title">La consideración siempre será más importante que la corrección</h2>
+              <p class="decreto-card__subtitle">Proteger la dignidad de quien se equivoca</p>
               <div class="decreto-card__body">
                 <p>
-                  En Aldea, la educación no es repetir "gracias" como un robot entrenado.
-                  <strong>Ser educada es hacer sentir al otro importante.</strong>
-                  Es elegir no actuar por impulso, sino darte un segundo para pensar cómo responder.
+                  En Aldea creemos que la verdadera elegancia no se nota en la rapidez con la que señalas un error, sino en el cuidado con el que proteges la dignidad de quien se equivoca.
                 </p>
                 <p>
-                  La verdadera educación se revela en los momentos incómodos: cuando alguien llega tarde,
-                  se equivoca o dice algo imprudente.
-                  <strong>Lo que haces con ese instante define tu saber estar.</strong>
+                  Corregir a alguien puede ser un acto de amor o de humillación. La diferencia está en la <strong>consideración</strong> que pones en el tono, el lugar y el momento que eliges. No se trata de callar lo que es importante, sino de recordar que delante del error siempre hay una persona.
                 </p>
                 <p>
-                  Proteger a la otra persona es uno de los actos más hermosos de elegancia.
-                  No se trata de burlarse, ni de exponer; se trata de usar tu discreción como escudo.
+                  En los espacios de Aldea preferimos la pregunta a la acusación, la invitación a hacerlo mejor antes que la vergüenza pública. Corregir con respeto es recordar que todos hemos estado alguna vez del otro lado del tropiezo.
                 </p>
               </div>
               <div class="decreto-card__consejo">
                 <p class="decreto-card__consejo-label">Consejo del Decreto I</p>
                 <p class="decreto-card__consejo-text">
-                  Cuando alguien se equivoca delante de ti, pregúntate:
-                  "¿Cómo puedo cuidar su dignidad en este momento?".
-                  Esa respuesta es tu verdadera educación.
+                  Antes de corregir a alguien, pregúntate: “¿Esta corrección lo hará sentirse respetado o avergonzado?”. Si la respuesta es vergüenza, aún no has encontrado la forma correcta de decirlo.
                 </p>
               </div>
             </div>
           </article>
 
-          <article class="decreto-card reveal" aria-label="Decreto II - Ser asertiva">
+          <!-- DECRETO II -->
+          <article class="decreto-card reveal" aria-label="Decreto II - La presencia vale más que la apariencia">
             <div>
               <p class="decreto-card__label">Decreto</p>
               <p class="decreto-card__index">II</p>
             </div>
             <div>
-              <h2 class="decreto-card__title">Ser asertiva</h2>
-              <p class="decreto-card__subtitle">La elegancia hecha comunicación</p>
+              <h2 class="decreto-card__title">La presencia vale más que la apariencia</h2>
+              <p class="decreto-card__subtitle">Estar presente de verdad</p>
               <div class="decreto-card__body">
                 <p>
-                  La asertividad es la base de la elegancia en la convivencia.
-                  <strong>Ser asertiva es acertar en tu mensaje, en tu tono y en tu comportamiento.</strong>
+                  En Aldea no nos impresiona tanto cómo llegas vestido como la calidad de tu atención cuando estás con otra persona.
                 </p>
                 <p>
-                  En Aldea tenemos algo claro: ser amable no es ser débil, y ser clara no es ser grosera.
-                  La fuerza está en decir lo que piensas sin perder el tacto.
+                  La apariencia es lo que se ve en un segundo; la <strong>presencia</strong> es lo que se siente cuando compartes un rato con alguien. Estar presente es dejar de estar en todas partes para estar, de verdad, donde tus pies están: escuchar sin prisas, mirar a los ojos, guardar el celular.
                 </p>
                 <p>
-                  La fórmula secreta de la asertividad combina suavidad en el tono con firmeza en el mensaje.
-                  Eso es poder, presencia y saber estar.
+                  Puedes entrar a una sala impecablemente arreglada y aun así hacer sentir solo al otro. En Aldea preferimos a quienes llegan con atención, paciencia y curiosidad auténtica, porque eso es lo que deja huella cuando la conversación termina.
                 </p>
               </div>
               <div class="decreto-card__consejo">
                 <p class="decreto-card__consejo-label">Consejo del Decreto II</p>
                 <p class="decreto-card__consejo-text">
-                  Cambia el "No puedo" seco por
-                  "Hoy no me es posible, pero gracias por pensar en mí".
-                  El contenido es el mismo; la diferencia está en tu elegancia.
+                  La próxima vez que estés con alguien, pon tu celular boca abajo, guarda los audífonos y haz una pregunta que de verdad te interese escuchar. Observa cómo cambia la conversación cuando llevas tu presencia completa.
                 </p>
               </div>
             </div>
           </article>
 
-          <article class="decreto-card reveal" aria-label="Decreto III - Ser empática">
+          <!-- DECRETO III -->
+          <article class="decreto-card reveal" aria-label="Decreto III - Nadie se educa solo">
             <div>
               <p class="decreto-card__label">Decreto</p>
               <p class="decreto-card__index">III</p>
             </div>
             <div>
-              <h2 class="decreto-card__title">Ser empática</h2>
-              <p class="decreto-card__subtitle">Leer el escenario antes de entrar</p>
+              <h2 class="decreto-card__title">Nadie se educa solo</h2>
+              <p class="decreto-card__subtitle">Una obra colectiva</p>
               <div class="decreto-card__body">
                 <p>
-                  Este Decreto habla de tu capacidad de leer la escena antes de actuar.
-                  La empatía en Aldea va mucho más allá de "ponerse en el lugar del otro".
+                  La educación, en Aldea, no es un mérito individual ni una medalla privada: es una obra colectiva hecha de encuentros, gestos y ejemplos.
                 </p>
                 <p>
-                  <strong>Una persona empática escucha para comprender y luego decide cómo aparecer.</strong>
-                  Observa miradas, silencios, cambios de energía.
-                  Lo que no se dice, también comunica.
+                  Aprendemos de quienes nos hablan con paciencia, de los libros que alguien nos recomendó, de la vecina que saluda cada mañana, del compañero que nos corrige en voz baja para cuidarnos. Cada persona que pasa por nuestra vida deja una clase, aunque no se dé cuenta.
                 </p>
                 <p>
-                  La empatía requiere distancia interna: mirar la situación desde afuera, de forma desinteresada,
-                  para actuar con criterio y humanidad.
+                  Reconocer que nadie se educa solo nos vuelve más humildes y más responsables. Humildes, porque entendemos que lo mejor de nosotros no lo hicimos solo. Responsables, porque sabemos que también estamos enseñando algo con lo que hacemos y dejamos de hacer.
                 </p>
               </div>
               <div class="decreto-card__consejo">
                 <p class="decreto-card__consejo-label">Consejo del Decreto III</p>
                 <p class="decreto-card__consejo-text">
-                  Antes de reaccionar, haz una pausa de tres segundos y pregúntate:
-                  "¿Qué está pasando realmente aquí, más allá de las palabras?".
+                  Piensa en la última persona de la que aprendiste algo importante, grande o pequeño. Díselo, escríbele o agradécele en silencio; recordar su aporte es reconocer que tu educación también es una herencia compartida.
                 </p>
               </div>
             </div>
           </article>
 
-          <article class="decreto-card reveal" aria-label="Decreto IV - Ser prudente">
+          <!-- DECRETO IV -->
+          <article class="decreto-card reveal" aria-label="Decreto IV - La influencia es una responsabilidad">
             <div>
               <p class="decreto-card__label">Decreto</p>
               <p class="decreto-card__index">IV</p>
             </div>
             <div>
-              <h2 class="decreto-card__title">Ser prudente</h2>
-              <p class="decreto-card__subtitle">El arte de no decirlo todo</p>
+              <h2 class="decreto-card__title">La influencia es una responsabilidad</h2>
+              <p class="decreto-card__subtitle">Vivir con conciencia de lo que generas</p>
               <div class="decreto-card__body">
                 <p>
-                  La prudencia es el arte de no contarlo todo, no mostrarlo todo, no opinar de todo.
-                  En una época donde todos tienen algo que decir, <strong>la discreción es casi revolucionaria.</strong>
+                  En Aldea creemos que toda persona influye en alguien, tenga o no tenga seguidores, y que esa influencia nunca es neutra.
                 </p>
                 <p>
-                  Los discretos son pocos, y eso los convierte en oro puro.
-                  La prudencia no te apaga; te posiciona.
-                  Es ese filtro invisible que deja a los demás con la sensación de:
-                  "hay algo en ella... no sé qué es, pero me encanta".
+                  Lo que recomiendas, lo que celebras, lo que normalizas con tus chistes o tus silencios, educa. Un comentario puede abrir un mundo o cerrar una puerta para siempre. La <strong>influencia</strong> aparece en lo que compartes en redes, pero también en cómo hablas de los demás cuando no están.
                 </p>
                 <p>
-                  A eso, en Aldea, le llamamos <strong>magnetismo</strong>.
+                  Vivir con conciencia de tu influencia es preguntarte no solo “¿qué quiero decir?”, sino “¿qué voy a generar con esto?”. En Aldea elegimos amplificar lo que dignifica, lo que construye y lo que inspira a tratar mejor al otro.
                 </p>
               </div>
               <div class="decreto-card__consejo">
                 <p class="decreto-card__consejo-label">Consejo del Decreto IV</p>
                 <p class="decreto-card__consejo-text">
-                  No todo pensamiento merece convertirse en palabra.
-                  Pregúntate: "¿Aporta? ¿Suma? ¿Es el momento?".
-                  Si la respuesta es no, tu silencio también es elegancia.
+                  Antes de compartir un contenido, un comentario o una opinión, pregúntate: “Si todos actuaran como en este mensaje, ¿el mundo sería un poco mejor o un poco peor?”. Deja que esa respuesta sea tu filtro de influencia.
                 </p>
               </div>
             </div>
           </article>
 
-          <article class="decreto-card reveal" aria-label="Decreto V - Ser respetuosa">
+          <!-- DECRETO V -->
+          <article class="decreto-card reveal" aria-label="Decreto V - Siempre hay una mejor forma de habitar el mundo">
             <div>
               <p class="decreto-card__label">Decreto</p>
               <p class="decreto-card__index">V</p>
             </div>
             <div>
-              <h2 class="decreto-card__title">Ser respetuosa</h2>
-              <p class="decreto-card__subtitle">El lenguaje universal de las memorables</p>
+              <h2 class="decreto-card__title">Siempre hay una mejor forma de habitar el mundo</h2>
+              <p class="decreto-card__subtitle">Una búsqueda constante de belleza</p>
               <div class="decreto-card__body">
                 <p>
-                  El respeto es el lenguaje universal de las personas memorables.
-                  <strong>No depende de jerarquías, ni de títulos, ni de dinero.</strong>
+                  Aldea no es un manual cerrado de cómo vivir, sino una invitación a buscar, una y otra vez, maneras más amables de estar en el mundo.
                 </p>
                 <p>
-                  Cómo tratas a quien no puede ofrecerte nada, define tu nivel real de educación.
-                  En Aldea, el respeto por todo y por todos es un must, no una opción selectiva.
+                  Habitar mejor el mundo no siempre exige grandes gestos. Muchas veces empieza con pequeñas decisiones: cambiar el tono de una respuesta, dejar el lugar un poco más ordenado de lo que lo encontraste, ofrecer tu asiento, mirar con menos juicio y más curiosidad.
                 </p>
                 <p>
-                  El saber estar convierte el respeto en hábito, no en un gesto que depende de con quién estás hablando.
+                  Creemos en la mejora constante, no en la perfección. Cada día trae una oportunidad de probar una versión más considerada de ti mismo: para contigo, para con los otros y para con los espacios que compartes. Esa búsqueda es, en sí misma, una forma de belleza.
                 </p>
               </div>
               <div class="decreto-card__consejo">
                 <p class="decreto-card__consejo-label">Consejo del Decreto V</p>
                 <p class="decreto-card__consejo-text">
-                  Observa cómo hablas con quien te sirve el café, con quien abre la puerta,
-                  con quien no "importa".
-                  Ahí se ve de qué estás hecha.
+                  Elige una situación cotidiana —saludar, agradecer, pedir algo— y pregúntate: “¿Cómo podría hacerlo hoy un poco más amable que ayer?”. Practica ese pequeño cambio durante una semana y mira cómo se transforma tu entorno.
                 </p>
               </div>
             </div>
@@ -940,6 +922,9 @@
     </section>
   </main>
 
+  <!-- ============================================================
+       FOOTER (ACTUALIZADO COHERENTE)
+  ============================================================ -->
   <footer class="footer" role="contentinfo">
     <div class="footer__grid">
       <div>
@@ -952,11 +937,9 @@
           <li><a href="/#aldea">Aldea</a></li>
           <li><a href="/fundadora/index.html">Conoce a la Fundadora</a></li>
           <li><a href="/decretos-de-aldea/index.html">Decretos de Aldea</a></li>
-          <li><a href="/comunidad-de-fundadoras/index.html">Comunidad de Fundadoras</a></li>
-          <li><a href="/#programas">Roles</a></li>
+          <li><a href="/#programas">Casas</a></li>
           <li><a href="/#la-plaza">La Plaza</a></li>
-          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener">Miniserie — Ep. 1</a></li>
-          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener">Miniserie — Ep. 2</a></li>
+          <li><a href="https://estreno.campuslaetiquette.com/replay/" target="_blank" rel="noopener">El Origen</a></li>
         </ul>
       </div>
       <div>
@@ -973,7 +956,11 @@
     </div>
   </footer>
 
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
   <script>
+    // ── Dropdowns desktop ─────────────────────────────────────────
     document.querySelectorAll('.navbar__dropdown').forEach(dropdown => {
       const toggle = dropdown.querySelector('.navbar__dropdown-toggle');
       toggle.addEventListener('click', (e) => {
@@ -996,6 +983,7 @@
       });
     });
 
+    // ── Dropdowns mobile ──────────────────────────────────────────
     document.querySelectorAll('.mobile-dropdown__toggle').forEach(toggle => {
       toggle.addEventListener('click', () => {
         const parent = toggle.closest('.mobile-dropdown');
@@ -1004,6 +992,7 @@
       });
     });
 
+    // ── Hamburger menu ────────────────────────────────────────────
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -1021,6 +1010,7 @@
       });
     });
 
+    // ── Scroll reveal ─────────────────────────────────────────────
     const revealEls = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1032,6 +1022,7 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(el => observer.observe(el));
 
+    // ── Smooth scroll for anchor links ────────────────────────────
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e) => {
         const target = document.querySelector(anchor.getAttribute('href'));
