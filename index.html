@@ -188,7 +188,7 @@
     }
 
     /* =============================================
-       NAVBAR
+       NAVBAR (CORREGIDO PARA EVITAR DESAJUSTES)
     ============================================= */
     .navbar {
       position: fixed;
@@ -227,10 +227,13 @@
       box-shadow: 0 1px 16px rgba(100, 70, 40, 0.07);
     }
 
-    /* Logo — contenedor */
+    /* Logo — contenedor (Corregido con posición relativa) */
     .navbar__logo {
       display: flex;
       align-items: center;
+      position: relative; /* Asegura el anclaje de las imágenes absolutas */
+      height: 36px;
+      width: 120px;
     }
 
     /* Ambas versiones del logo */
@@ -240,6 +243,8 @@
       width: auto;
       transition: opacity 0.45s ease;
       position: absolute;
+      left: 0;
+      top: 0;
     }
 
     /* Estado inicial: logo blanco visible, negro oculto */
@@ -249,14 +254,6 @@
     /* Al scrollear: logo negro visible, blanco oculto */
     .navbar.scrolled .navbar__logo-white { opacity: 0; }
     .navbar.scrolled .navbar__logo-black { opacity: 1; }
-
-    /* Espaciado para que el logo ocupe su lugar en el flex */
-    .navbar__logo::after {
-      content: '';
-      display: block;
-      height: 36px;
-      width: 120px; /* ajusta si tu logo es más ancho o estrecho */
-    }
 
     .navbar__nav {
       display: flex;
@@ -1201,14 +1198,13 @@
         <ul class="navbar__dropdown-menu" role="menu">
           <li><a href="/fundadora/index.html" role="menuitem">Conoce a la Fundadora</a></li>
           <li><a href="/decretos-de-aldea/index.html" role="menuitem">Decretos de Aldea</a></li>
-          <li><a href="/comunidad-de-fundadoras/index.html" role="menuitem">Comunidad de Fundadoras</a></li>
         </ul>
       </div>
 
-      <!-- ROLES -->
+      <!-- CASAS -->
       <div class="navbar__dropdown">
         <button class="navbar__dropdown-toggle" aria-expanded="false">
-          Roles
+          Casas
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <ul class="navbar__dropdown-menu" role="menu">
@@ -1221,17 +1217,8 @@
       <!-- LA PLAZA -->
       <a href="#la-plaza">La Plaza</a>
 
-      <!-- MINISERIE -->
-      <div class="navbar__dropdown">
-        <button class="navbar__dropdown-toggle" aria-expanded="false">
-          Miniserie
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <ul class="navbar__dropdown-menu" role="menu">
-          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener" role="menuitem">Episodio 1</a></li>
-          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener" role="menuitem">Episodio 2</a></li>
-        </ul>
-      </div>
+      <!-- EL ORIGEN -->
+      <a href="https://estreno.campuslaetiquette.com/replay/" target="_blank" rel="noopener">El Origen</a>
 
       <a href="#programas" class="btn btn-primary">Entrar</a>
     </nav>
@@ -1253,14 +1240,13 @@
       <ul class="mobile-dropdown__menu">
         <li><a href="/fundadora/index.html">Conoce a la Fundadora</a></li>
         <li><a href="/decretos-de-aldea/index.html">Decretos de Aldea</a></li>
-        <li><a href="/comunidad-de-fundadoras/index.html">Comunidad de Fundadoras</a></li>
       </ul>
     </div>
 
-    <!-- ROLES mobile -->
+    <!-- CASAS mobile -->
     <div class="mobile-dropdown">
       <button class="mobile-dropdown__toggle" aria-expanded="false">
-        Roles
+        Casas
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <ul class="mobile-dropdown__menu">
@@ -1272,17 +1258,8 @@
 
     <a href="#la-plaza">La Plaza</a>
 
-    <!-- MINISERIE mobile -->
-    <div class="mobile-dropdown">
-      <button class="mobile-dropdown__toggle" aria-expanded="false">
-        Miniserie
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <ul class="mobile-dropdown__menu">
-        <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener">Episodio 1</a></li>
-        <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener">Episodio 2</a></li>
-      </ul>
-    </div>
+    <!-- EL ORIGEN mobile -->
+    <a href="https://estreno.campuslaetiquette.com/replay/" target="_blank" rel="noopener">El Origen</a>
 
     <a href="#programas" class="btn btn-primary" style="text-align:center;margin-top:4px;">Entrar</a>
   </nav>
@@ -1433,7 +1410,7 @@
           <p class="pricing-card__price">USD $3,333</p>
           <p class="pricing-card__desc">
             Para la mujer que quiere dominar la metodología y vivir de lo que ama.
-            Construirás un proyecto real y monetizable, y te convertirás en maestra
+            Construirás un proyecto real y monetizable, y te financierás en maestra
             dentro de Aldea. Primera cohorte: 7 de septiembre.
           </p>
           <ul class="pricing-card__features" aria-label="Beneficios Gobernadora">
@@ -1582,11 +1559,9 @@
           <li><a href="#aldea">Aldea</a></li>
           <li><a href="/fundadora/index.html">Conoce a la Fundadora</a></li>
           <li><a href="/decretos-de-aldea/index.html">Decretos de Aldea</a></li>
-          <li><a href="/comunidad-de-fundadoras/index.html">Comunidad de Fundadoras</a></li>
-          <li><a href="#programas">Roles</a></li>
+          <li><a href="#programas">Casas</a></li>
           <li><a href="#la-plaza">La Plaza</a></li>
-          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio1" target="_blank" rel="noopener">Miniserie — Ep. 1</a></li>
-          <li><a href="https://estreno.campuslaetiquette.com/replay-episodio2" target="_blank" rel="noopener">Miniserie — Ep. 2</a></li>
+          <li><a href="https://estreno.campuslaetiquette.com/replay/" target="_blank" rel="noopener">El Origen</a></li>
         </ul>
       </div>
       <div>
