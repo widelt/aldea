@@ -1,1 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aviso de Privacidad Integral · ALDEA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Aviso de Privacidad Integral de ALDEA. Conoce cómo protegemos y tratamos tus datos personales bajo la legislación vigente." />
 
+  <!-- No indexar páginas legales -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Tipografías de ALDEA -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #FAF7F2;
+      --bg-alt: #F5F0E8;
+      --bg-soft: #FBF9F5;
+      --text-main: #2C2016;
+      --text-muted: #6E5F52;
+      --text-light: #FEFCF8;
+      --accent: #8B3A2A; /* Terracota oficial */
+      --accent-olive: #5F6B56; /* Verde sabio */
+      --accent-bronze: #C59B6D; /* Bronce/Oro */
+      --border-soft: #E1D5C8;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 24px;
+
+      --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-main);
+    }
+
+    body {
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 100% - 3rem);
+      margin: 0 auto;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(250, 247, 242, 0.94);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .navbar-brand span:nth-child(2) {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-olive);
+      font-weight: 600;
+    }
+
+    .navbar-link {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .navbar-link:hover {
+      color: var(--accent);
+    }
+
+    /* Cabecera de Página */
+    .legal-header {
+      padding: clamp(3rem, 6vw, 4.5rem) 0 2rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-olive);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      font-weight: 400;
+      margin: 0 0 0.5rem;
+    }
+
+    .update-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Layout de Contenido Legal */
+    .legal-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+      gap: clamp(2rem, 5vw, 4.5rem);
+      padding: 3rem 0 5rem;
+      align-items: flex-start;
+    }
+
+    /* Barra Lateral */
+    .legal-sidebar {
+      position: sticky;
+      top: 100px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .legal-sidebar li {
+      margin-bottom: 0.9rem;
+    }
+
+    .legal-sidebar a {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.22s ease;
+      display: block;
+    }
+
+    .legal-sidebar a:hover {
+      color: var(--accent);
+    }
+
+    /* Contenido de Cláusulas */
+    .legal-content h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--text-main);
+      margin: 2rem 0 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(139, 69, 19, 0.06);
+    }
+
+    .legal-content h2:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .legal-content h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.4rem 0 0.6rem;
+      color: var(--text-main);
+    }
+
+    .legal-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    .legal-content ul, .legal-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .legal-content li {
+      margin-bottom: 0.6rem;
+    }
+
+    .legal-content strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .legal-content em {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: 1.1em;
+    }
+
+    /* Alertas e Información de Respaldo */
+    .alert-box {
+      border-radius: var(--radius-md);
+      border: 1px dashed rgba(95, 107, 86, 0.4);
+      background: rgba(95, 107, 86, 0.03);
+      padding: 1.35rem 1.3rem 1.1rem;
+      font-size: 0.92rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .alert-box strong {
+      color: var(--accent-olive);
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.8rem 0 2rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background-color: var(--bg-soft);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .legal-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+      }
+
+      .legal-sidebar {
+        display: none; /* Se oculta la barra lateral en tabletas y móviles */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar" role="banner">
+    <div class="container navbar-inner">
+      <a href="/index.html" class="navbar-brand" aria-label="Volver a la página principal de ALDEA">
+        <span>ALDEA</span>
+        <span>PRIVACIDAD</span>
+      </a>
+      <a href="/index.html" class="navbar-link">Volver a la Home</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- CABECERA -->
+    <div class="container">
+      <div class="legal-header">
+        <p class="eyebrow">Políticas de seguridad</p>
+        <h1>Aviso de Privacidad Integral</h1>
+        <p class="update-date">Última actualización: Junio de 2026</p>
+      </div>
+    </div>
+
+    <!-- CONTENIDO LEGAL -->
+    <div class="container">
+      <div class="legal-layout">
+        <!-- Barra Lateral de Navegación Rápida -->
+        <nav class="legal-sidebar" aria-label="Navegación de privacidad">
+          <ul>
+            <li><a href="#responsable">1. Responsable</a></li>
+            <li><a href="#datos">2. Datos Recabados</a></li>
+            <li><a href="#finalidades">3. Finalidades</a></li>
+            <li><a href="#arco">4. Derechos ARCO</a></li>
+            <li><a href="#transferencias">5. Transferencias</a></li>
+            <li><a href="#rastreo">6. Tecnologías de rastreo</a></li>
+            <li><a href="#cambios">7. Actualizaciones</a></li>
+            <li><a href="#contacto">8. Contacto</a></li>
+          </ul>
+        </nav>
+
+        <!-- Cláusulas -->
+        <article class="legal-content">
+          <section id="responsable">
+            <h2>1. Identidad y Domicilio del Responsable</h2>
+            <p>
+              En ALDEA y <em>La Etiquette</em>, entendemos que la privacidad y la consideración hacia la seguridad de tus datos son pilares fundamentales para el buen saber estar corporativo y personal.
+            </p>
+            <p>
+              Por ello, se declara formalmente que **María Paula Camacho**, con residencia y domicilio legal en la Ciudad de México, México, actúa como la **Responsable** del tratamiento, uso, resguardo y protección de los datos personales recopilados a través de este sitio web o mediante la adquisición de cualquiera de nuestros programas formativos y membresías.
+            </p>
+          </section>
+
+          <section id="datos">
+            <h2>2. Datos Personales que Recabamos</h2>
+            <p>
+              Para proveer nuestros servicios de capacitación y asertividad de forma adecuada, recabamos las siguientes categorías de datos personales:
+            </p>
+            <ul>
+              <li><strong>Datos de Identificación y Contacto:</strong> Nombre completo, dirección de correo electrónico, número de teléfono celular (asociado a canales de comunicación directa y soporte como WhatsApp), y nombre de usuario de Instagram (requerido para habilitar el acceso a los beneficios de la membresía Ciudadana).</li>
+              <li><strong>Datos de Facturación y Pago:</strong> RFC (Registro Federal de Contribuyentes) o clave de identificación tributaria equivalente, dirección fiscal completa y detalles de facturación.</li>
+            </ul>
+            <div class="alert-box">
+              <strong>Aclaración de seguridad:</strong> ALDEA no almacena ni procesa en sus propios servidores los datos sensibles de tus tarjetas de crédito o débito. Todas las transacciones son ejecutadas directamente por plataformas externas de alta seguridad bajo encriptación SSL (Stripe, PayPal, Apple, etc.).
+            </div>
+            <p>
+              Bajo ninguna circunstancia ALDEA solicita o trata **datos personales sensibles** (tales como creencias religiosas, origen racial, estado de salud o ideología política).
+            </p>
+          </section>
+
+          <section id="finalidades">
+            <h2>3. Finalidades del Tratamiento de los Datos</h2>
+            <p>
+              El tratamiento de tus datos personales se apega a las normativas de la legislación mexicana, clasificando las finalidades bajo las siguientes categorías:
+            </p>
+            
+            <h3>3.1. Finalidades Primarias (Necesarias para el cumplimiento del servicio):</h3>
+            <ul>
+              <li>Verificar tu identidad y procesar tu alta como integrante de nuestras Casas (Ciudadana, Regidora, Gobernadora).</li>
+              <li>Procesar cobros periódicos, emitir los comprobantes fiscales o comerciales correspondientes y gestionar la facturación.</li>
+              <li>Brindar soporte técnico, resolver problemas operativos y dar atención al cliente de forma personalizada.</li>
+              <li>Notificar cambios importantes en el servicio, avisos de mantenimiento, actualizaciones de la plataforma o modificaciones a estos acuerdos legales.</li>
+            </ul>
+
+            <h3>3.2. Finalidades Secundarias (Fines estadísticos y publicitarios):</h3>
+            <ul>
+              <li>Enviar boletines informativos (*newsletters*), tips, lecciones breves de cortesía y contenidos de interés relacionados con el Saber Estar.</li>
+              <li>Informar sobre promociones, lanzamientos de nuevos programas o eventos exclusivos organizados por ALDEA.</li>
+              <li>Diseñar audiencias personalizadas de mercadotecnia y segmentación de pauta publicitaria en redes sociales (como Instagram y Facebook) para optimizar nuestro alcance mediante herramientas como el Meta Pixel.</li>
+            </ul>
+            <p>
+              En caso de que no desees que tus datos sean utilizados para las finalidades secundarias descritas, puedes manifestar tu oposición en cualquier momento enviando un correo electrónico a la dirección de soporte especificada al final de este aviso.
+            </p>
+          </section>
+
+          <section id="arco">
+            <h2>4. Limitación del uso de datos y Derechos ARCO</h2>
+            <p>
+              De conformidad con lo dispuesto en la **Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)** de México, el Usuario goza del derecho inalienable de controlar el uso de su información a través de los **Derechos ARCO**:
+            </p>
+            <ul>
+              <li><strong>Acceso:</strong> Derecho a conocer qué datos personales tenemos tuyos, para qué los utilizamos y las condiciones del uso que les damos.</li>
+              <li><strong>Rectificación:</strong> Derecho a solicitar la corrección de tu información personal en caso de que esté desactualizada, sea inexacta o esté incompleta.</li>
+              <li><strong>Cancelación:</strong> Derecho a solicitar que eliminemos tu información de nuestros registros o bases de datos si consideras que no está siendo utilizada adecuadamente.</li>
+              <li><strong>Oposición:</strong> Derecho a oponerte al uso de tus datos personales para fines específicos (como el envío de correos promocionales).</li>
+            </ul>
+            <p>
+              Para ejercer cualquiera de tus Derechos ARCO, revocar tu consentimiento para el tratamiento de tus datos o limitar su uso y divulgación, el Usuario debe enviar una solicitud clara y por escrito al correo electrónico oficial: **hola@aldealaetiquette.com**. 
+            </p>
+            <p>
+              Dicha solicitud será atendida y resuelta en un plazo máximo legal de **20 días hábiles** contados a partir de su recepción, confirmándose el resultado de la gestión de manera directa a tu dirección de correo electrónico de contacto.
+            </p>
+          </section>
+
+          <section id="transferencias">
+            <h2>5. Transferencia de Datos Personales</h2>
+            <p>
+              ALDEA se compromete bajo protesta de decir verdad a **no vender, alquilar, transferir o compartir tus datos personales con terceros ajenos a la marca con fines comerciales**.
+            </p>
+            <p>
+              Las únicas transferencias de datos que se realizan son de carácter estrictamente operativo y técnico con empresas proveedoras de servicios tecnológicos autorizadas que actúan como "Encargados" bajo nuestro mandato (proveedores de hosting, pasarelas de pago, herramientas de email marketing y la plataforma de Instagram para habilitar los accesos de la membresía).
+            </p>
+          </section>
+
+          <section id="rastreo">
+            <h2>6. Uso de Cookies, Web Beacons y Tecnologías de Rastreo</h2>
+            <p>
+              Informamos al Usuario que nuestro sitio web y portales emplean *cookies* y tecnologías similares de rastreo de analítica digital (como el **Meta Pixel**). Estas herramientas recopilan datos de navegación de forma pasiva (tales como duración de la sesión, tipo de navegador, páginas internas visitadas y patrones de interacción) con el propósito de generar estadísticas de uso de nuestra plataforma y optimizar campañas publicitarias segmentadas en redes sociales.
+            </p>
+            <p>
+              El Usuario conserva la opción de deshabilitar, bloquear o borrar estas cookies en cualquier momento ajustando los parámetros de seguridad de su navegador web preferido.
+            </p>
+          </section>
+
+          <section id="cambios">
+            <h2>7. Cambios al Aviso de Privacidad</h2>
+            <p>
+              ALDEA se reserva el derecho de modificar, actualizar o reformar este Aviso de Privacidad Integral en respuesta a novedades legislativas en México, cambios en los modelos de negocio o mejoras de seguridad interna. Cualquier modificación sustancial será informada mediante una actualización pública y visible en este mismo enlace de nuestro portal.
+            </p>
+          </section>
+
+          <section id="contacto">
+            <h2>8. Contacto</h2>
+            <p>
+              Para dudas, sugerencias o aclaraciones relacionadas con el tratamiento de tus datos personales, puedes comunicarte directamente con el área de soporte encargada mediante el siguiente canal oficial de atención por correo electrónico:
+            </p>
+            <p style="font-weight: 500; color: var(--accent);">
+              hola@aldealaetiquette.com
+            </p>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> ALDEA · El Arte de Saber Estar</span>
+      <div class="footer-links">
+        <a href="/terminos-y-condiciones.html">Términos y condiciones</a>
+        <a href="https://instagram.com/laetiquette" target="_blank" rel="noopener noreferrer">@laetiquette</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
