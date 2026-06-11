@@ -1,1 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Términos y Condiciones · ALDEA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Términos y Condiciones de Uso y Contratación para el portal y los programas de ALDEA." />
 
+  <!-- No indexar páginas legales -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Tipografías de ALDEA -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #FAF7F2;
+      --bg-alt: #F5F0E8;
+      --bg-soft: #FBF9F5;
+      --text-main: #2C2016;
+      --text-muted: #6E5F52;
+      --text-light: #FEFCF8;
+      --accent: #8B3A2A; /* Terracota oficial */
+      --accent-olive: #5F6B56; /* Verde sabio */
+      --accent-bronze: #C59B6D; /* Bronce/Oro */
+      --border-soft: #E1D5C8;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 24px;
+
+      --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-main);
+    }
+
+    body {
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 100% - 3rem);
+      margin: 0 auto;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(250, 247, 242, 0.94);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .navbar-brand span:nth-child(2) {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-olive);
+      font-weight: 600;
+    }
+
+    .navbar-link {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .navbar-link:hover {
+      color: var(--accent);
+    }
+
+    /* Cabecera de Página */
+    .legal-header {
+      padding: clamp(3rem, 6vw, 4.5rem) 0 2rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-olive);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      font-weight: 400;
+      margin: 0 0 0.5rem;
+    }
+
+    .update-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Layout de Contenido Legal */
+    .legal-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+      gap: clamp(2rem, 5vw, 4.5rem);
+      padding: 3rem 0 5rem;
+      align-items: flex-start;
+    }
+
+    /* Barra Lateral */
+    .legal-sidebar {
+      position: sticky;
+      top: 100px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .legal-sidebar li {
+      margin-bottom: 0.9rem;
+    }
+
+    .legal-sidebar a {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.22s ease;
+      display: block;
+    }
+
+    .legal-sidebar a:hover {
+      color: var(--accent);
+    }
+
+    /* Contenido de Cláusulas */
+    .legal-content h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--text-main);
+      margin: 2rem 0 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(139, 69, 19, 0.06);
+    }
+
+    .legal-content h2:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .legal-content h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.4rem 0 0.6rem;
+      color: var(--text-main);
+    }
+
+    .legal-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    .legal-content ul, .legal-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .legal-content li {
+      margin-bottom: 0.6rem;
+    }
+
+    .legal-content strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .legal-content em {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: 1.1em;
+    }
+
+    /* Alertas e Información de Respaldo */
+    .alert-box {
+      border-radius: var(--radius-md);
+      border: 1px dashed rgba(139, 58, 42, 0.4);
+      background: rgba(139, 58, 42, 0.03);
+      padding: 1.35rem 1.3rem 1.1rem;
+      font-size: 0.92rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .alert-box strong {
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.8rem 0 2rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background-color: var(--bg-soft);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .legal-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+      }
+
+      .legal-sidebar {
+        display: none; /* Se oculta la barra lateral en tabletas y móviles */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar" role="banner">
+    <div class="container navbar-inner">
+      <a href="/index.html" class="navbar-brand" aria-label="Volver a la página principal de ALDEA">
+        <span>ALDEA</span>
+        <span>LEGAL</span>
+      </a>
+      <a href="/index.html" class="navbar-link">Volver a la Home</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- CABECERA -->
+    <div class="container">
+      <div class="legal-header">
+        <p class="eyebrow">Políticas de contratación</p>
+        <h1>Términos y Condiciones de Uso</h1>
+        <p class="update-date">Última actualización: Junio de 2026</p>
+      </div>
+    </div>
+
+    <!-- CONTENIDO LEGAL -->
+    <div class="container">
+      <div class="legal-layout">
+        <!-- Barra Lateral de Navegación Rápida -->
+        <nav class="legal-sidebar" aria-label="Navegación legal">
+          <ul>
+            <li><a href="#titularidad">1. Titularidad</a></li>
+            <li><a href="#servicios">2. Los Servicios</a></li>
+            <li><a href="#propiedad">3. Propiedad Intelectual</a></li>
+            <li><a href="#pagos">4. Precios y Facturación</a></li>
+            <li><a href="#reembolsos">5. Reembolsos y Retracto</a></li>
+            <li><a href="#responsabilidad">6. Responsabilidad</a></li>
+            <li><a href="#legislacion">7. Jurisdicción aplicable</a></li>
+            <li><a href="#contacto">8. Contacto</a></li>
+          </ul>
+        </nav>
+
+        <!-- Cláusulas -->
+        <article class="legal-content">
+          <section id="titularidad">
+            <h2>1. Información General y Titularidad</h2>
+            <p>
+              El presente documento establece los Términos y Condiciones de Uso y Contratación regulados para el acceso y uso de los contenidos, herramientas, infoproductos y programas de mentoría que integran el ecosistema digital de **ALDEA** y *La Etiquette*.
+            </p>
+            <p>
+              El sitio web y todos los servicios ofrecidos en este dominio son propiedad exclusiva de **María Paula Camacho**, con residencia, domicilio fiscal y operación legal en los Estados Unidos Mexicanos (México). Cualquier interacción, navegación, suscripción o compra a través de este portal atribuye la condición de "Usuario" e implica la total aceptación, sin reservas, de las cláusulas aquí especificadas.
+            </p>
+          </section>
+
+          <section id="servicios">
+            <h2>2. Condiciones y Naturaleza de los Servicios (Casas)</h2>
+            <p>
+              ALDEA provee tres formatos principales de capacitación y desarrollo en la metodología de <em>El Arte de Saber Estar</em>, cada uno sujeto a condiciones de acceso específicas:
+            </p>
+            <h3>2.1. Membresía Ciudadana (Suscripción Recurrente)</h3>
+            <p>
+              Se trata de un servicio de educación continua basado en cobros mensuales recurrentes y autogestionados de **$4.50 USD** (o su equivalente en moneda local). La continuidad del acceso a las herramientas, recetas, guías e historias exclusivas dentro de la plataforma de entrega está condicionada a mantener la suscripción activa.
+            </p>
+            <h3>2.2. Programa Regidora (Aceleradora de 6 semanas)</h3>
+            <p>
+              Consiste en un programa estratégico, de inmersión y mentoría personalizada limitado estrictamente a **10 plazas por cohorte**. Su propósito es ajustar la presencia y la comunicación de mujeres en periodos de transición de liderazgo. El proceso de admisión requiere de una postulación de perfil y de una Sesión de Claridad previa para validar la idoneidad del programa respecto a las metas de la alumna.
+            </p>
+            <h3>2.3. Certificación Gobernadora (Formación de 10 semanas)</h3>
+            <p>
+              Es nuestro programa de mayor nivel académico y de negocios, limitado a **solo 5 plazas por cohorte**. Está diseñado para la transferencia de metodología y capacitación técnica para la comercialización independiente de servicios de consultoría en Saber Estar. Requiere de entrevista de postulación y aceptación formal por parte de María Paula Camacho.
+            </p>
+          </section>
+
+          <section id="propiedad">
+            <h2>3. Propiedad Intelectual y Licencia de Uso</h2>
+            <div class="alert-box">
+              <strong>Importante:</strong> Todo el contenido alojado en este portal y entregado en nuestras Casas es un activo intelectual de la marca. Queda estrictamente prohibida su reventa o redistribución.
+            </div>
+            <p>
+              La totalidad del contenido disponible en el portal (incluyendo de forma enunciativa pero no limitativa: la metodología <em>El Arte de Saber Estar</em>, clases grabadas, materiales didácticos, plantillas de trabajo, *workbooks*, guías, textos, códigos de diseño, ilustraciones, marcas y logotipos de ALDEA) son de propiedad intelectual exclusiva de María Paula Camacho, protegidos bajo la legislación mexicana e internacional sobre derechos de autor.
+            </p>
+            <p>
+              ALDEA otorga al Usuario una **licencia de uso personal, no transferible, de carácter estrictamente privado y no comercial** sobre los infoproductos adquiridos.
+            </p>
+            <p>
+              Queda estrictamente prohibido realizar grabaciones del contenido, compartir accesos de usuario o claves con terceros, revender el material formativo, o duplicar y plagiar la metodología o el modelo comercial de ALDEA para impartir formaciones similares de manera ajena a la marca.
+            </p>
+            <p>
+              <em>Sanción:</em> El incumplimiento comprobado de estas cláusulas resultará en la inmediata revocación de la licencia, cancelación sin derecho a reembolso de sus accesos, y el inicio de las acciones civiles, penales o de resarcimiento de daños bajo las leyes correspondientes.
+            </p>
+          </section>
+
+          <section id="pagos">
+            <h2>4. Precios, Pagos y Facturación</h2>
+            <p>
+              Los precios de contratación están denominados en Dólares de los Estados Unidos de América (USD), o su equivalencia correspondiente a Pesos Mexicanos (MXN) aplicados de manera automática en la pasarela de cobro según el tipo de cambio oficial del momento de la compra.
+            </p>
+            <p>
+              El procesamiento de transacciones se gestiona de manera encriptada y segura mediante plataformas de pago internacionales certificadas, como Stripe, PayPal o las tiendas de aplicaciones correspondientes. ALDEA no almacena ni tiene acceso a los datos bancarios sensibles del Usuario.
+            </p>
+          </section>
+
+          <section id="reembolsos">
+            <h2>5. Políticas de Cancelación, Reembolso y Derecho de Revocación</h2>
+            <p>
+              Con el objetivo de garantizar claridad y proteger el cupo limitado de los participantes en cada programa, se establecen las siguientes políticas de acuerdo al tipo de servicio contratado:
+            </p>
+            
+            <h3>5.1. Derecho de Revocación (Consumo Digital en México)</h3>
+            <p>
+              De conformidad con el Artículo 56 de la **Ley Federal de Protección al Consumidor de los Estados Unidos Mexicanos**, el Usuario que contrate de manera digital tiene un plazo de **5 días hábiles** desde la adquisición del infoproducto o servicio para revocar su consentimiento y solicitar el reembolso del dinero.
+            </p>
+            <p>
+              <strong>Excepción legal para contenidos digitales:</strong> Este derecho de reembolso *se extingue automáticamente* si el Usuario ya ha ingresado a la plataforma de aprendizaje, ha descargado los materiales adjuntos o ha visualizado más del 20% del contenido de las lecciones dentro de ese periodo de tiempo, al tratarse de servicios de consumo digital inmediato.
+            </p>
+
+            <h3>5.2. Cancelación de Membresía (Ciudadana)</h3>
+            <p>
+              Los cobros de la suscripción mensual son recurrentes. El Usuario conserva el derecho absoluto de cancelar su membresía en cualquier momento. La cancelación debe ser gestionada directamente por el Usuario desde la misma aplicación de origen donde se dio de alta (Instagram / Apple / Google), sin contratos forzosos ni trámites de permanencia.
+            </p>
+
+            <h3>5.3. Cancelación de Programas y Certificaciones (Regidora y Gobernadora)</h3>
+            <p>
+              Al tratarse de mentorías personalizadas de alta inmersión con reserva rígida de cupos (10 y 5 plazas respectivamente) y bloqueo formal de agenda para consultoría directa, una vez que la postulación de la candidata ha sido aceptada, se han iniciado las sesiones o se ha entregado su plan de trabajo a medida, **no se realizarán reembolsos totales ni parciales bajo ninguna circunstancia** en caso de abandono voluntario o inasistencia del alumno.
+            </p>
+          </section>
+
+          <section id="responsabilidad">
+            <h2>6. Limitación de Responsabilidad (Exención de Resultados)</h2>
+            <p>
+              ALDEA provee la metodología formativa de Saber Estar, la experiencia, el análisis de comportamiento y el acompañamiento directo de alto nivel para impulsar la proyección del Usuario. No obstante, **ALDEA no garantiza resultados económicos, comerciales, laborales, reputacionales o de ascensos profesionales específicos**.
+            </p>
+            <p>
+              El éxito de la metodología depende enteramente de la asimilación técnica, la disciplina, la implementación asertiva y el contexto particular de cada participante.
+            </p>
+          </section>
+
+          <section id="legislacion">
+            <h2>7. Ley Aplicable y Jurisdicción (México)</h2>
+            <p>
+              El presente acuerdo se rige e interpreta bajo el marco normativo federal de los **Estados Unidos Mexicanos** y la **Procuraduría Federal del Consumidor (PROFECO)**.
+            </p>
+            <p>
+              Cualquier controversia derivada de la interpretación, validez o ejecución de estos Términos y Condiciones que no pueda resolverse de mutuo acuerdo, será sometida a la jurisdicción exclusiva de los tribunales de la **Ciudad de México**, renunciando expresamente a cualquier otra competencia o fuero que pudiera corresponder por domicilio presente o futuro.
+            </p>
+          </section>
+
+          <section id="contacto">
+            <h2>8. Contacto y Soporte</h2>
+            <p>
+              Para cualquier duda, aclaración legal o soporte relacionado con los presentes términos, el Usuario puede ponerse en contacto directo a través de nuestro correo oficial de soporte:
+            </p>
+            <p style="font-weight: 500; color: var(--accent);">
+              hola@aldealaetiquette.com
+            </p>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> ALDEA · El Arte de Saber Estar</span>
+      <div class="footer-links">
+        <a href="/aviso-de-privacidad.html">Aviso de privacidad</a>
+        <a href="/terminos-y-condiciones.html">Términos y condiciones</a>
+        <a href="https://instagram.com/laetiquette" target="_blank" rel="noopener noreferrer">@laetiquette</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
