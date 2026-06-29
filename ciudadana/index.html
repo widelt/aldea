@@ -383,13 +383,11 @@
 
 
 	.preview-video-wrapper {
-	  margin: 1.8rem auto 1.6rem;
-	  width: 45%;                /* ancho relativo al bloque de texto */
-	  max-width: 360px;          /* límite superior */
-	  min-width: 260px;          /* para que en móvil no quede demasiado pequeño */
-	  border-radius: 18px;
-	  overflow: hidden;
-	  box-shadow: var(--shadow-soft);
+		margin: 1.8rem auto 1.6rem;
+		max-width: 640px;          /* ajusta según tu diseño */
+		border-radius: 18px;
+		overflow: hidden;
+		box-shadow: var(--shadow-soft);
 	}
 
 	.preview-video {
@@ -536,6 +534,20 @@
       }
     }
   </style>
+    
+	<!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1251616755300595');
+  fbq('track', 'PageView');
+  </script>
 </head>
 <body>
   <!-- Navbar -->
@@ -790,8 +802,8 @@
     <div class="container footer-inner">
       <span>© <span id="year"></span> ALDEA · El Arte de Saber Estar</span>
       <div class="footer-links">
-        <a href="/aviso-de-privacidad/index.html">Aviso de privacidad</a>
-        <a href="/terminos-y-condiciones/index.html">Términos y condiciones</a>
+        <a href="/aviso-de-privacidad.html">Aviso de privacidad</a>
+        <a href="/terminos-y-condiciones.html">Términos y condiciones</a>
         <a href="https://instagram.com/laetiquette" target="_blank" rel="noopener noreferrer">@laetiquette</a>
       </div>
     </div>
