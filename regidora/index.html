@@ -165,7 +165,7 @@
     }
 
     h1 {
-      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      font-size: clamp(2.1rem, 3.2vw, 2.9rem);
       line-height: 1.15;
     }
 
@@ -218,25 +218,74 @@
       margin: 0 auto;
     }
 
-    /* Hero */
+    /* =============================================
+       HERO ESTRUCTURA INTEGRADA (CON VISTA DE VIDEO)
+    ============================================= */
     .hero {
-      padding-top: clamp(4rem, 8vw, 6rem);
-      padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
-      background: radial-gradient(circle at top left, rgba(139, 58, 42, 0.14), transparent 60%);
+      padding-top: clamp(3rem, 6vw, 4.5rem);
+      padding-bottom: clamp(3rem, 6vw, 4rem);
+      background: radial-gradient(circle at top left, rgba(139, 58, 42, 0.1), transparent 60%);
     }
 
+    /* Rejilla asimétrica basada en Grid Areas para reordenamiento móvil */
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: clamp(2.5rem, 5vw, 3.8rem);
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+      grid-template-areas: 
+        "eyebrow video"
+        "title video"
+        "content-top video"
+        "content-bottom video";
+      gap: clamp(2rem, 4vw, 3.2rem);
       align-items: center;
     }
 
+    .hero-eyebrow-item {
+      grid-area: eyebrow;
+      margin-bottom: 0;
+    }
+
+    .hero-title-item {
+      grid-area: title;
+      margin-bottom: 0;
+    }
+
+    .hero-video-item {
+      grid-area: video;
+      width: 100%;
+    }
+
+    .hero-content-top {
+      grid-area: content-top;
+    }
+
+    .hero-content-bottom {
+      grid-area: content-bottom;
+    }
+
     .hero-lead {
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      max-width: 34rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+    }
+
+    /* Invitación Discreta al Video */
+    .invitation-text {
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .invitation-text svg {
+      fill: var(--accent);
+      stroke: var(--accent);
+      margin-top: 3px;
+      flex-shrink: 0;
     }
 
     .hero-ctas {
@@ -248,22 +297,31 @@
     }
 
     .hero-note {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
       max-width: 28rem;
+      line-height: 1.5;
     }
 
-    /* Panel de imagen hero */
-    .hero-image-panel {
+    /* Contenedor del Reproductor de Video VSL */
+    .hero-video-panel {
       border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      height: 480px;
-      background-image: linear-gradient(to bottom, rgba(30, 20, 16, 0.2), rgba(30, 20, 16, 0.55)), url("regidora.webp");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      border: 1px solid var(--border-soft);
+      box-shadow: 0 24px 60px rgba(30, 10, 5, 0.16);
+      background-color: #000;
+      border: 1px solid var(--accent-bronze);
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      position: relative;
+    }
+
+    .hero-video-panel iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     /* Listas y layouts */
@@ -510,19 +568,50 @@
 
     /* Responsive */
     @media (max-width: 960px) {
-      .hero-grid,
-      .two-column,
-      .value-stack {
-        grid-template-columns: minmax(0, 1fr);
+      .hero {
+        padding-top: clamp(2rem, 5vw, 3.5rem);
+        padding-bottom: 2rem;
       }
 
       .hero-grid {
-        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        text-align: center;
       }
 
-      .hero-image-panel {
-        order: -1;
-        height: 280px;
+      .hero-eyebrow-item {
+        order: 1;
+      }
+
+      .hero-title-item {
+        order: 2;
+      }
+
+      .hero-content-top {
+        order: 3; /* Subtítulo, título y texto de invitación primero */
+      }
+
+      .hero-video-item {
+        order: 4; /* Video justo debajo de la invitación a verlo */
+      }
+
+      .hero-content-bottom {
+        order: 5; /* CTA y nota al final */
+      }
+
+      .invitation-text {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero-ctas {
+        justify-content: center;
+      }
+
+      .two-column,
+      .value-stack {
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .profiles-grid {
@@ -541,10 +630,6 @@
         padding: 0.65rem 0;
       }
 
-      .hero {
-        padding-top: 2.6rem;
-      }
-
       .hero-ctas {
         flex-direction: column;
         align-items: stretch;
@@ -556,7 +641,7 @@
     }
   </style>
   
-	<!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -571,7 +656,7 @@
   </script>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Navbar (Mantenida idéntica al ecosistema corregido) -->
   <header class="navbar" role="banner">
     <div class="container navbar-inner">
       <a href="/index.html" class="navbar-brand" aria-label="Volver a la página principal de ALDEA">
@@ -584,15 +669,31 @@
 
   <main id="main-content">
     <!-- HERO -->
-    <section id="hero" class="hero" aria-labelledby="hero-title">
+    <section id="hero" class="hero" aria-label="Introducción a Regidora">
       <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">La Revolución de La Etiquette · ALDEA</p>
-          <h1 id="hero-title">Tu talento ya te trajo hasta hoy. Es momento de que tu presencia te lleve al siguiente nivel.</h1>
+        <p class="eyebrow hero-eyebrow-item">La Revolución de La Etiquette · ALDEA</p>
+        <h1 id="hero-title" class="hero-title-item">Tu talento ya te trajo hasta hoy. Es momento de que tu presencia te lleve al siguiente nivel.</h1>
+        
+        <!-- Contenedor inmersivo para la Video-Sesión (VSL) -->
+        <div class="hero-video-item">
+          <div class="hero-video-panel">
+            <iframe width="100%" height="100%" src="https://videomng.builderall.com/embed/INYbrmqjdA/?controls=1&speed=1&allowpause=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="hero-content-top">
           <p class="hero-lead">
             <strong>Regidora</strong> es la Aceleradora de Autoridad y Presencia Estratégica. Un entrenamiento inmersivo de 6 semanas de mentoría uno a uno diseñado para mujeres con un objetivo específico o en plena transición de liderazgo.
           </p>
+          
+          <!-- Invitación Discreta para Ver el Video Completo -->
+          <div class="invitation-text">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-top:2px;" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Mira este video hasta el final para descubrir el programa que te ayudará a cambiar cómo los demas te perciben.</span>
+          </div>
+        </div>
 
+        <div class="hero-content-bottom">
           <div class="hero-ctas">
             <a href="https://booking.builderall.com/c/widelt/cbc492e73cd4d6fe82309ec6d4144559/yw9Z7a8O" class="btn btn-primary">
               Aplicar a Regidora
@@ -603,9 +704,6 @@
             Al hacer clic, responderás un breve cuestionario de perfil y podrás agendar una Sesión de Claridad sin costo.
           </p>
         </div>
-
-        <!-- Panel de imagen premium a la derecha -->
-        <div class="hero-image-panel" aria-hidden="true"></div>
       </div>
     </section>
 
